@@ -1,0 +1,202 @@
+fileFormatVersion: 2
+guid: c7c09be8b4878ff48a4561db9b3a3267
+timeCreated: 1486566740
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: grass1
+    100002: grass2
+    100004: grass3
+    100006: grass4
+    100008: ground
+    100010: //RootNode
+    100012: groundtograss1
+    100014: groundtograss2
+    100016: part01
+    100018: part02
+    100020: part03
+    100022: part04
+    100024: part05
+    100026: part06
+    100028: part07
+    100030: part08
+    100032: part09
+    100034: part10
+    100036: part11
+    100038: part12
+    100040: road1
+    100042: road2
+    100044: road3
+    100046: road4
+    100048: roadtograss1
+    100050: roadtograss2
+    400000: grass1
+    400002: grass2
+    400004: grass3
+    400006: grass4
+    400008: ground
+    400010: //RootNode
+    400012: groundtograss1
+    400014: groundtograss2
+    400016: part01
+    400018: part02
+    400020: part03
+    400022: part04
+    400024: part05
+    400026: part06
+    400028: part07
+    400030: part08
+    400032: part09
+    400034: part10
+    400036: part11
+    400038: part12
+    400040: road1
+    400042: road2
+    400044: road3
+    400046: road4
+    400048: roadtograss1
+    400050: roadtograss2
+    2300000: grass1
+    2300002: grass2
+    2300004: grass3
+    2300006: grass4
+    2300008: ground
+    2300010: groundtograss1
+    2300012: groundtograss2
+    2300014: part01
+    2300016: part02
+    2300018: part03
+    2300020: part04
+    2300022: part05
+    2300024: part06
+    2300026: part07
+    2300028: part08
+    2300030: part09
+    2300032: part10
+    2300034: part11
+    2300036: part12
+    2300038: road1
+    2300040: road2
+    2300042: road3
+    2300044: road4
+    2300046: roadtograss1
+    2300048: roadtograss2
+    3300000: grass1
+    3300002: grass2
+    3300004: grass3
+    3300006: grass4
+    3300008: ground
+    3300010: groundtograss1
+    3300012: groundtograss2
+    3300014: part01
+    3300016: part02
+    3300018: part03
+    3300020: part04
+    3300022: part05
+    3300024: part06
+    3300026: part07
+    3300028: part08
+    3300030: part09
+    3300032: part10
+    3300034: part11
+    3300036: part12
+    3300038: road1
+    3300040: road2
+    3300042: road3
+    3300044: road4
+    3300046: roadtograss1
+    3300048: roadtograss2
+    4300000: roadtograss2
+    4300002: groundtograss1
+    4300004: groundtograss2
+    4300006: ground
+    4300008: roadtograss1
+    4300010: road4
+    4300012: road3
+    4300014: road2
+    4300016: road1
+    4300018: grass3
+    4300020: grass4
+    4300022: grass1
+    4300024: grass2
+    4300026: part10
+    4300028: part11
+    4300030: part09
+    4300032: part12
+    4300034: part05
+    4300036: part06
+    4300038: part07
+    4300040: part08
+    4300042: part01
+    4300044: part02
+    4300046: part03
+    4300048: part04
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

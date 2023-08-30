@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: ac8c0e2e9f5f872499027e4daa8aced7
+timeCreated: 1486566946
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bg
+    100002: //RootNode
+    100004: Dummy_camera
+    100006: Dummy_sun
+    100008: ferns
+    100010: ground
+    100012: manor
+    100014: mill
+    100016: mountain_01
+    100018: mountain_02
+    100020: mountain_03
+    100022: mountain_04
+    100024: mountain_05
+    100026: Pine_trees
+    100028: Pine_trees_MeshPart0
+    100030: Pine_trees_MeshPart1
+    100032: poisonshop
+    100034: pub
+    100036: rocks
+    400000: bg
+    400002: //RootNode
+    400004: Dummy_camera
+    400006: Dummy_sun
+    400008: ferns
+    400010: ground
+    400012: manor
+    400014: mill
+    400016: mountain_01
+    400018: mountain_02
+    400020: mountain_03
+    400022: mountain_04
+    400024: mountain_05
+    400026: Pine_trees
+    400028: Pine_trees_MeshPart0
+    400030: Pine_trees_MeshPart1
+    400032: poisonshop
+    400034: pub
+    400036: rocks
+    2300000: bg
+    2300002: ferns
+    2300004: ground
+    2300006: manor
+    2300008: mill
+    2300010: mountain_01
+    2300012: mountain_02
+    2300014: mountain_03
+    2300016: mountain_04
+    2300018: mountain_05
+    2300020: Pine_trees_MeshPart0
+    2300022: Pine_trees_MeshPart1
+    2300024: poisonshop
+    2300026: pub
+    2300028: rocks
+    3300000: bg
+    3300002: ferns
+    3300004: ground
+    3300006: manor
+    3300008: mill
+    3300010: mountain_01
+    3300012: mountain_02
+    3300014: mountain_03
+    3300016: mountain_04
+    3300018: mountain_05
+    3300020: Pine_trees_MeshPart0
+    3300022: Pine_trees_MeshPart1
+    3300024: poisonshop
+    3300026: pub
+    3300028: rocks
+    4300000: ground
+    4300002: poisonshop
+    4300004: manor
+    4300006: pub
+    4300008: mill
+    4300010: mountain_04
+    4300012: mountain_03
+    4300014: mountain_02
+    4300016: mountain_05
+    4300018: mountain_01
+    4300020: Pine_trees_MeshPart0
+    4300022: Pine_trees_MeshPart1
+    4300024: rocks
+    4300026: ferns
+    4300028: bg
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
