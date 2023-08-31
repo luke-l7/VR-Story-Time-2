@@ -461,6 +461,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 308019442458818429, guid: 5ef2bcca2a96f38498a8dcf52868e53e, type: 3}
   m_PrefabInstance: {fileID: 405447152}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &17999595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17999588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75255508a45ae8242affb80059bd9255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1792568449}
+  shouldMove: 0
+  book: {fileID: 17999588}
 --- !u!1001 &20429237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16803,6 +16818,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 311184656859670933, guid: 5ef2bcca2a96f38498a8dcf52868e53e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 17999589}
+    - targetCorrespondingSourceObject: {fileID: 311184656859670933, guid: 5ef2bcca2a96f38498a8dcf52868e53e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 17999595}
   m_SourcePrefab: {fileID: 100100000, guid: 5ef2bcca2a96f38498a8dcf52868e53e, type: 3}
 --- !u!1001 &405712252
 PrefabInstance:
@@ -38020,7 +38038,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621563985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.915038, y: -7.5313587, z: -11.2807665}
+  m_LocalPosition: {x: 5.915, y: -7.5313587, z: -11.486}
   m_LocalScale: {x: 0.57, y: 0.55, z: 0.35}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41078,6 +41096,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: fb6144750c8626e4ebbd22c0e4ac2b5d, type: 3}
   m_PrefabInstance: {fileID: 1788736366}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1792568449 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 266185978428555859, guid: 5eccbf4be2c00e94689ee8062e4e7276, type: 3}
+  m_PrefabInstance: {fileID: 809736449}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1792606095
 GameObject:
