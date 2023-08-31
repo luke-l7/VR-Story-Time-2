@@ -6,6 +6,7 @@ public class RoomTeddy : MonoBehaviour
 {
     public Animator animator;
     private string bookHint1 = "dont you think that book over by the window looks suspicios?";
+    private string bookHint2 = "maybe try extending your hand to it?";
     public static RoomTeddy Instance { get; private set; }
     public PopupSystem popupSystem;
     private void Awake()
@@ -19,15 +20,20 @@ public class RoomTeddy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-        void Start()
+
+    void Start()
     {
         animator= GetComponent<Animator>();
     }
 
     public void StandUp()
     {
-
         animator.SetTrigger("StandUp");
         popupSystem.ShowPopUp(bookHint1);
+    }
+
+    public void GiveAnotherHint()
+    {
+        popupSystem.ShowPopUp(bookHint2);
     }
 }

@@ -9,6 +9,7 @@ public class Controller : MonoBehaviour
     public GameObject book;
     public GameObject cameraObj;
     public GameObject skybox;
+    public GameObject bookHoverButton;
 
     private BookBehavior bookBehavior;
     private BloomEffect cameraBehavior;
@@ -46,6 +47,7 @@ public class Controller : MonoBehaviour
         Vector2 currTime = timeController.GetTimeOfDay();
         time_passed += Time.deltaTime;
         float minutes = (int)time_passed / 60;
+        
 
         if (bookBehavior.shouldMove)
         {
@@ -65,7 +67,8 @@ public class Controller : MonoBehaviour
             }
         }
         //transition time to 19:00 to set up the scene
-        else if(currTime.x < 18 || (currTime.x > 18 && currTime.y < 5)) {
+        else if(currTime.x < 18 || (currTime.x > 18 && currTime.y < 5))
+        {
             Debug.Log("time speeding");
             timeController.StartTimelineTransition(18, 5, 20f, AzureTimeDirection.Forward);
 
@@ -81,7 +84,12 @@ public class Controller : MonoBehaviour
         }
         if (teddyStandUp || minutes >= NO_OF_MINS)
         {
+            bookHoverButton.SetActive(true);
             RoomTeddy.Instance.StandUp();
+        }
+        if (minutes > 1.5f) // give another hint
+        {
+            RoomTeddy.Instance.GiveAnotherHint();
         }
     }
 

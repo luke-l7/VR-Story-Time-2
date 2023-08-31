@@ -7067,6 +7067,7 @@ MonoBehaviour:
   book: {fileID: 170257484}
   cameraObj: {fileID: 1621049768}
   skybox: {fileID: 1202317405}
+  bookHoverButton: {fileID: 1621563985}
   runes: {fileID: 87410162}
   SwitchScene: 0
   teddyStandUp: 0
@@ -37821,7 +37822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1621563986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39089,6 +39090,7 @@ MonoBehaviour:
   book: {fileID: 1746520699}
   cameraObj: {fileID: 142113476}
   skybox: {fileID: 0}
+  bookHoverButton: {fileID: 0}
   runes: {fileID: 0}
   SwitchScene: 0
   teddyStandUp: 0
