@@ -18,10 +18,13 @@ public class Controller : MonoBehaviour
     private bool speedUpTime;
     private bool runesStartedPlaying;
     private AudioManager audioManager;
-
+    // time before teddy stands up
+    private float time_passed;
+    private float NO_OF_MINS = 1f;
     //debug
     public bool SwitchScene = false;
     public bool teddyStandUp = false;
+    
 
     private void Start()
     {
@@ -35,10 +38,14 @@ public class Controller : MonoBehaviour
         cameraBehavior = cameraObj.GetComponent<BloomEffect>();
         timeController= skybox.GetComponent<AzureTimeController>();
 
+        time_passed = 0.0f;
+
     }
     void Update()
     {   
         Vector2 currTime = timeController.GetTimeOfDay();
+        time_passed += Time.deltaTime;
+        float minutes = (int)time_passed / 60;
 
         if (bookBehavior.shouldMove)
         {
@@ -72,7 +79,7 @@ public class Controller : MonoBehaviour
             //SceneController.Instance.TransitionToScene(3);
             ScreenFader.Instance.FadeTo(3);
         }
-        if (teddyStandUp)
+        if (teddyStandUp || minutes >= NO_OF_MINS)
         {
             RoomTeddy.Instance.StandUp();
         }
