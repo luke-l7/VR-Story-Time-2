@@ -21,7 +21,7 @@ public class Controller : MonoBehaviour
     private AudioManager audioManager;
     // time before teddy stands up
     private float time_passed;
-    private float NO_OF_MINS = 1f;
+    private int NO_OF_SECONDS = 60;
     //debug
     public bool SwitchScene = false;
     public bool teddyStandUp = false;
@@ -40,6 +40,8 @@ public class Controller : MonoBehaviour
         timeController= skybox.GetComponent<AzureTimeController>();
 
         time_passed = 0.0f;
+
+        Invoke("ActivateTeddyInteraction", NO_OF_SECONDS); // activate teddy stand up and book interaction after NO_OF_SECONDS 
 
     }
     void Update()
@@ -82,17 +84,26 @@ public class Controller : MonoBehaviour
             //SceneController.Instance.TransitionToScene(3);
             ScreenFader.Instance.FadeTo(3);
         }
-        if (teddyStandUp || minutes >= NO_OF_MINS)
+        if (teddyStandUp)
         {
-            bookHoverButton.SetActive(true);
-            RoomTeddy.Instance.StandUp();
+            ActivateTeddyInteraction();
         }
-        if (minutes > 1.5f) // give another hint
+    }
+
+    private void ActivateTeddyInteraction()
+    {
+        bookHoverButton.SetActive(true);
+        RoomTeddy.Instance.StandUp();
+        Invoke("GiveSecondHint", 30); // invoke give another hint after 30 seconds - in total 1.5 mins after teddy stands up and book not touched
+    }
+
+    private void GiveSecondHint()
+    {
+        if(bookHoverButton.activeSelf) // if book is still not touched
         {
             RoomTeddy.Instance.GiveAnotherHint();
         }
     }
-
 
     
 }
