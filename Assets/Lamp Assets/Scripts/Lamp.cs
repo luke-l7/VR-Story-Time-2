@@ -14,11 +14,12 @@ public class Lamp : MonoBehaviour {
     public GameObject DomeOn;
 
     public bool TurnOn;
-    
+    public bool isOn;
     
 
 	// Use this for initialization
 	void Start () {
+        isOn = false;
     }
 	
 	// Update is called once per frame
@@ -39,6 +40,20 @@ public class Lamp : MonoBehaviour {
             DomeOff.SetActive(true);
             DomeOn.SetActive(false);
 
+        }
+    }
+
+    public void ChangeState()
+    {
+        Debug.Log("entered");
+        if(TurnOn) // turn off
+        {
+            TurnOn = false;
+            
+        } 
+        else // turn on
+        {
+            TurnOn = true;
         }
     }
 }
