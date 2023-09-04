@@ -41,7 +41,8 @@ public class Controller : MonoBehaviour
 
         time_passed = 0.0f;
 
-        Invoke("ActivateTeddyInteraction", NO_OF_SECONDS); // activate teddy stand up and book interaction after NO_OF_SECONDS 
+        // activate teddy stand up and book interaction after NO_OF_SECONDS - see ActivateTeddyInteraction function below.
+        Invoke("ActivateTeddyInteraction", NO_OF_SECONDS); 
 
     }
     void Update()
@@ -90,13 +91,23 @@ public class Controller : MonoBehaviour
         }
     }
 
-    private void ActivateTeddyInteraction()
+
+    /**
+     * activates the ability of extending the hand for the book - happens after 1 minute and after the teddy's hint
+     * this function is set to be invoked after 1 minute in Start();
+     */
+    private void ActivateTeddyInteraction() 
     {
         bookHoverButton.SetActive(true);
         RoomTeddy.Instance.StandUp();
         Invoke("GiveSecondHint", 30); // invoke give another hint after 30 seconds - in total 1.5 mins after teddy stands up and book not touched
     }
 
+
+    /**
+     * if the book haven't been touched after the bear's hint in 30 seconds, a second hint is applied that asks the player to try and extend a hand towards it
+     * this function is invoked automatically after 30 seconds using the "Invoke" in the previous function
+     */
     private void GiveSecondHint()
     {
         if(bookHoverButton.activeSelf) // if book is still not touched
