@@ -8343,7 +8343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1621049777}
-  shouldMove: 0
+  shouldMove: 1
   book: {fileID: 17999588}
 --- !u!4 &175666670 stripped
 Transform:
