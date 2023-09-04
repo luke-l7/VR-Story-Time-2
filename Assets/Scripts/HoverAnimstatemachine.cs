@@ -22,6 +22,7 @@ public class HoverAnimstatemachine : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool("DoneHovering", true);
+
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
