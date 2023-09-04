@@ -49,11 +49,12 @@ public class BookBehavior : MonoBehaviour
                 //Debug.Log("done hovering");
                 book.GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenFront, 3f);
                 bookAnim.SetBool("shouldHover", false);
-                transform.position = Player.transform.position + new Vector3(0,0,0.8f);
-                transform.Rotate( -90f, 8.055f, 0f);
+                // set its coords the same as when the animation stops, so no jump happens
+                book.transform.position = new Vector3(2.39197326f, 0.148902416f, -5.85163689f);
+                book.transform.Rotate(271.488831f, 355.424011f, 14.4269972f);
                 //transform.LookAt(Player.position);
             }
-        }
+        } 
     }
 }
 
