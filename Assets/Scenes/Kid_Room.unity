@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0048320987, g: 0.026144726, b: 0.08464696, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16148,9 +16148,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: fe05525cd6940ef488bf8fa43981ef10, type: 2}
     - target: {fileID: 289545823286736281, guid: 5ef2bcca2a96f38498a8dcf52868e53e, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1bf96e05ec307ce439fb8f29156480b2, type: 2}
+    - target: {fileID: 289545823286736281, guid: 5ef2bcca2a96f38498a8dcf52868e53e, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 99a5d5ed3beff5a45b11bd49a31c8179, type: 2}
+      objectReference: {fileID: 2100000, guid: b207b99f2ab7b17468078bd0518ccf51, type: 2}
     - target: {fileID: 289545823286736281, guid: 5ef2bcca2a96f38498a8dcf52868e53e, type: 3}
       propertyPath: m_Materials.Array.data[4]
       value: 
@@ -16824,13 +16828,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: fe05525cd6940ef488bf8fa43981ef10, type: 2}
     - target: {fileID: 410054527638068717, guid: 5ef2bcca2a96f38498a8dcf52868e53e, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1bf96e05ec307ce439fb8f29156480b2, type: 2}
+    - target: {fileID: 410054527638068717, guid: 5ef2bcca2a96f38498a8dcf52868e53e, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 99a5d5ed3beff5a45b11bd49a31c8179, type: 2}
+      objectReference: {fileID: 2100000, guid: b207b99f2ab7b17468078bd0518ccf51, type: 2}
     - target: {fileID: 410054527638068717, guid: 5ef2bcca2a96f38498a8dcf52868e53e, type: 3}
       propertyPath: m_Materials.Array.data[4]
       value: 
       objectReference: {fileID: 2100000, guid: 99a5d5ed3beff5a45b11bd49a31c8179, type: 2}
+    - target: {fileID: 415041330959768631, guid: 5ef2bcca2a96f38498a8dcf52868e53e, type: 3}
+      propertyPath: pageData.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38435,7 +38447,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1621563986}
         m_TargetAssemblyTypeName: bookButton, Assembly-CSharp
-        m_MethodName: activateBook
+        m_MethodName: endLife
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38448,6 +38460,18 @@ MonoBehaviour:
       - m_Target: {fileID: 604853269}
         m_TargetAssemblyTypeName: RoomTeddy, Assembly-CSharp
         m_MethodName: CheerSpeech
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 170257486}
+        m_TargetAssemblyTypeName: BookBehavior, Assembly-CSharp
+        m_MethodName: moveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

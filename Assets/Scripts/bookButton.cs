@@ -17,9 +17,8 @@ public class bookButton : MonoBehaviour
         transform.position = Vector3.Lerp(book.transform.position, player.position, weight); ;
         transform.LookAt(player.position);
     }
-    public void activateBook()
+    public void endLife()
     {
-        book.GetComponent<BookBehavior>().shouldMove = true;
         Destroy(gameObject);
     }
 }

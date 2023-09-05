@@ -10,6 +10,7 @@ public class BookBehavior : MonoBehaviour
     public Transform Player;
     public bool shouldMove;
     public GameObject book;
+    private bool isBookOpen;
 
     Animator bookAnim;
     private bool playedHoveringAnimation = false;
@@ -25,6 +26,7 @@ public class BookBehavior : MonoBehaviour
         //bookAnim = GetComponent<Animator>();
         bookAnim = book.GetComponent<Animator>();
         shouldMove = false;
+        isBookOpen= false;
     }
 
     // Update is called once per frame
@@ -35,24 +37,26 @@ public class BookBehavior : MonoBehaviour
         //    // Call the pointing detection method
         //    OnPointingDetected();
         //}
-        if (!playedHoveringAnimation)
+        if(shouldMove) { moveBook(); }
+
+        if (!isBookOpen && bookAnim.GetBool("DoneHovering") == true)
         {
-            if (shouldMove)
-            {
-                bookAnim.SetBool("shouldHover", true);
+            openBook();
+        }
+    }
 
-            }
+    public void moveBook()
+    {
+        shouldMove= false;
+        bookAnim.SetBool("shouldHover", true);
+    }
 
-            if (bookAnim.GetBool("DoneHovering") == true)
-            {
-                playedHoveringAnimation=true;
-                //Debug.Log("done hovering");
-                book.GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenFront, 3f);
-                bookAnim.SetBool("shouldHover", false);
-
-                //transform.LookAt(Player.position);
-            }
-        } 
+    public void openBook()
+    {
+        isBookOpen= true;
+        playedHoveringAnimation = true;
+        book.GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenMiddle, 3f);
+        bookAnim.SetBool("shouldHover", false);
     }
 }
 
