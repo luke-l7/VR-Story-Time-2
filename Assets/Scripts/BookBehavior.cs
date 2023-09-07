@@ -10,23 +10,23 @@ public class BookBehavior : MonoBehaviour
     public Transform Player;
     public bool shouldMove;
     public GameObject book;
-    private bool isBookOpen;
+    private Animator bookAnim;
+    private AudioManager audioManager;
+    public ParticleSystem runesParticleSystem;
 
-    Animator bookAnim;
     private bool playedHoveringAnimation = false;
 
     private void Awake()
     {
         //make sure the book is closed at the start
         book.GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.ClosedFront, 0f);
-
     }
     void Start()
     {
         //bookAnim = GetComponent<Animator>();
-        bookAnim = book.GetComponent<Animator>();
         shouldMove = false;
-        isBookOpen= false;
+        bookAnim = book.GetComponent<Animator>();
+        audioManager = AudioManager.Instance;
     }
 
     // Update is called once per frame
@@ -37,23 +37,20 @@ public class BookBehavior : MonoBehaviour
         //    // Call the pointing detection method
         //    OnPointingDetected();
         //}
-        if(shouldMove) { moveBook(); }
 
-        if (!isBookOpen && bookAnim.GetBool("DoneHovering") == true)
-        {
-            openBook();
-        }
+        // for debugging
+        if(shouldMove) { moveBook(); }
     }
 
     public void moveBook()
     {
-        shouldMove= false;
         bookAnim.SetBool("shouldHover", true);
+        audioManager.ActivateBookSound();
+        runesParticleSystem.Stop();
     }
 
     public void openBook()
     {
-        isBookOpen= true;
         playedHoveringAnimation = true;
         book.GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenMiddle, 3f);
         bookAnim.SetBool("shouldHover", false);

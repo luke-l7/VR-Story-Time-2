@@ -13,12 +13,12 @@ public class Controller : MonoBehaviour
 
     private BookBehavior bookBehavior;
     private BloomEffect cameraBehavior;
-    public GameObject runes;
-    private ParticleSystem runesParticleSystem;
+
     private AzureTimeController timeController;
     private bool speedUpTime;
     private bool runesStartedPlaying;
-    private AudioManager audioManager;
+    public ParticleSystem runesParticleSystem;
+    private Animator bookAnim;
     // time before teddy stands up
     private float time_passed;
     private int NO_OF_SECONDS = 60;
@@ -29,8 +29,6 @@ public class Controller : MonoBehaviour
 
     private void Start()
     {
-        audioManager = AudioManager.Instance;
-        runesParticleSystem = runes.GetComponent<ParticleSystem>();
         runesParticleSystem.Stop();
         runesStartedPlaying = false;
 
@@ -40,6 +38,8 @@ public class Controller : MonoBehaviour
         timeController= skybox.GetComponent<AzureTimeController>();
 
         time_passed = 0.0f;
+
+        bookAnim = book.GetComponent<Animator>();
 
         // activate teddy stand up and book interaction after NO_OF_SECONDS - see ActivateTeddyInteraction function below.
         Invoke("ActivateTeddyInteraction", NO_OF_SECONDS); 
@@ -54,8 +54,7 @@ public class Controller : MonoBehaviour
 
         if (bookBehavior.shouldMove)
         {
-
-            audioManager.ActivateBookSound();
+           
             runesParticleSystem.Stop();
         }
 
@@ -88,6 +87,13 @@ public class Controller : MonoBehaviour
         if (teddyStandUp)
         {
             ActivateTeddyInteraction();
+        }
+
+        // if book animation is done, it's time for Scene 1 to be activated!
+        if (bookAnim.GetBool("DoneHovering") == true)
+        {
+            GetComponent<Scene1>().enabled = true;
+            this.enabled = false;
         }
     }
 
