@@ -1,6 +1,7 @@
 using echo17.EndlessBook;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -13,6 +14,13 @@ public class BookBehavior : MonoBehaviour
     private Animator bookAnim;
     private AudioManager audioManager;
     public ParticleSystem runesParticleSystem;
+
+
+    // play pages params
+    private FMOD.Studio.EventInstance fmod_instance;
+    private bool RequestedPlay;
+    private int start;
+    private int end;
 
     private bool playedHoveringAnimation = false;
 
@@ -27,6 +35,7 @@ public class BookBehavior : MonoBehaviour
         shouldMove = false;
         bookAnim = book.GetComponent<Animator>();
         audioManager = AudioManager.Instance;
+        RequestedPlay = false;
     }
 
     // Update is called once per frame
@@ -40,6 +49,18 @@ public class BookBehavior : MonoBehaviour
 
         // for debugging
         if(shouldMove) { moveBook(); }
+
+        FMOD.Studio.PLAYBACK_STATE state;
+        fmod_instance.getPlaybackState(out state);
+        // play pages routine - when a scene script requests its pages the book plays and narrates them accordingly
+        if (RequestedPlay && state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
+        {
+            book.GetComponent<EndlessBook>().TurnToPage(start, EndlessBook.PageTurnTimeTypeEnum.TotalTurnTime, 1f); // flip to start page
+            fmod_instance = FMODUnity.RuntimeManager.CreateInstance("event:/page_" + start.ToString()); // the event corresponding to the page is always names page_ + no of page in FMOD
+            fmod_instance.start();
+            start++;
+        }
+        if(start > end) { RequestedPlay = false; }
     }
 
     public void moveBook()
@@ -48,7 +69,6 @@ public class BookBehavior : MonoBehaviour
         audioManager.ActivateBookSound();
         runesParticleSystem.Stop();
     }
-
     public void openBook()
     {
         playedHoveringAnimation = true;
@@ -58,8 +78,9 @@ public class BookBehavior : MonoBehaviour
 
     public void playPages(int start, int end)
     {
-        book.GetComponent<EndlessBook>().TurnToPage(start, EndlessBook.PageTurnTimeTypeEnum.TotalTurnTime, 1f);
-
+        RequestedPlay = true;
+        this.start = start;
+        this.end = end;
     }
 }
 

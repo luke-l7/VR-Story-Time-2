@@ -7102,7 +7102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartPage: 1
-  EndPage: 3
+  EndPage: 1
+  BookBehaviorObj: {fileID: 170257486}
 --- !u!114 &110555361
 MonoBehaviour:
   m_ObjectHideFlags: 0
