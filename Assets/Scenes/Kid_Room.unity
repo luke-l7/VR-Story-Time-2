@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.0048126904, g: 0.026118048, b: 0.08460347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -476,6 +476,7 @@ MonoBehaviour:
   Player: {fileID: 1792568449}
   shouldMove: 0
   book: {fileID: 17999588}
+  runesParticleSystem: {fileID: 0}
 --- !u!1001 &20429237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7045,9 +7046,10 @@ GameObject:
   m_Component:
   - component: {fileID: 110555359}
   - component: {fileID: 110555358}
+  - component: {fileID: 110555361}
   - component: {fileID: 110555360}
   m_Layer: 0
-  m_Name: Controller (1)
+  m_Name: StoryController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7065,11 +7067,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922a4c0de4da8e94ca3e30842fa98b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  book: {fileID: 170257484}
+  book: {fileID: 17999588}
   cameraObj: {fileID: 1621049768}
   skybox: {fileID: 1202317405}
   bookHoverButton: {fileID: 1621563985}
-  runes: {fileID: 87410162}
+  runesParticleSystem: {fileID: 87410165}
   SwitchScene: 0
   teddyStandUp: 0
 --- !u!4 &110555359
@@ -7094,11 +7096,32 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110555357}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27b535b3143b32b4f9925a9523482333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartPage: 1
+  EndPage: 3
+--- !u!114 &110555361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110555357}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d524ae28474b1bc4bb25e1ff9ffdfd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  welcome_speech:
+    Guid:
+      Data1: -2065501581
+      Data2: 1148423404
+      Data3: 995209386
+      Data4: -494876809
+    Path: event:/welcome_speech
   Book: {fileID: 17999588}
 --- !u!4 &113382167 stripped
 Transform:
@@ -8345,6 +8368,7 @@ MonoBehaviour:
   Player: {fileID: 1621049777}
   shouldMove: 1
   book: {fileID: 17999588}
+  runesParticleSystem: {fileID: 87410165}
 --- !u!4 &175666670 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0d92a0a7a7c3c7246bc83c48364ea2de, type: 3}
@@ -39931,7 +39955,7 @@ MonoBehaviour:
   cameraObj: {fileID: 142113476}
   skybox: {fileID: 0}
   bookHoverButton: {fileID: 0}
-  runes: {fileID: 0}
+  runesParticleSystem: {fileID: 0}
   SwitchScene: 0
   teddyStandUp: 0
 --- !u!4 &1691189676
@@ -41475,6 +41499,7 @@ MonoBehaviour:
   Player: {fileID: 142113484}
   shouldMove: 0
   book: {fileID: 0}
+  runesParticleSystem: {fileID: 0}
 --- !u!111 &1746520706
 Animation:
   m_ObjectHideFlags: 0

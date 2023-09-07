@@ -55,5 +55,11 @@ public class BookBehavior : MonoBehaviour
         book.GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenMiddle, 3f);
         bookAnim.SetBool("shouldHover", false);
     }
+
+    public void playPages(int start, int end)
+    {
+        book.GetComponent<EndlessBook>().TurnToPage(start, EndlessBook.PageTurnTimeTypeEnum.TotalTurnTime, 1f);
+
+    }
 }
 

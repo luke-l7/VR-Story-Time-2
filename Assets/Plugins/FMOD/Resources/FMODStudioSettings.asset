@@ -447,6 +447,7 @@ MonoBehaviour:
   - Bank B
   - CH1
   - Flute Bank
+  - Narrator
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

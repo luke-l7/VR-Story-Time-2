@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Scene1 : MonoBehaviour
 {
+    public int StartPage;
+    public int EndPage;
 
-    public GameObject Book;
-    // Start is called before the first frame update
+    // narrator voice events
+    string[] events_sequence;
     void Start()
     {
-        // open the book
-        Book.GetComponent<BookBehavior>().openBook();
+        
     }
 
     // Update is called once per frame

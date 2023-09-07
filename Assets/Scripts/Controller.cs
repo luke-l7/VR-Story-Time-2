@@ -92,7 +92,7 @@ public class Controller : MonoBehaviour
         // if book animation is done, it's time for Scene 1 to be activated!
         if (bookAnim.GetBool("DoneHovering") == true)
         {
-            GetComponent<Scene1>().enabled = true;
+            GetComponent<WelcomeScript>().enabled = true;
             this.enabled = false;
         }
     }
@@ -120,7 +120,5 @@ public class Controller : MonoBehaviour
         {
             RoomTeddy.Instance.GiveAnotherHint();
         }
-    }
-
-    
+    }    
 }
