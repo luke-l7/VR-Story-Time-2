@@ -55,7 +55,7 @@ public class BookBehavior : MonoBehaviour
         // play pages routine - when a scene script requests its pages the book plays and narrates them accordingly
         if (RequestedPlay && state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
         {
-            book.GetComponent<EndlessBook>().TurnToPage(start, EndlessBook.PageTurnTimeTypeEnum.TotalTurnTime, 1f); // flip to start page
+            book.GetComponent<EndlessBook>().TurnToPage(start, EndlessBook.PageTurnTimeTypeEnum.TimePerPage, 5f); // flip to start page
             fmod_instance = FMODUnity.RuntimeManager.CreateInstance("event:/page_" + start.ToString()); // the event corresponding to the page is always names page_ + no of page in FMOD
             fmod_instance.start();
             start++;
@@ -72,7 +72,7 @@ public class BookBehavior : MonoBehaviour
     public void openBook()
     {
         playedHoveringAnimation = true;
-        book.GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenMiddle, 3f);
+        book.GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenMiddle, 5f);
         bookAnim.SetBool("shouldHover", false);
     }
 
