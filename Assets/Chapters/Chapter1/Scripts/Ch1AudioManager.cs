@@ -20,11 +20,7 @@ public class Ch1AudioManager : MonoBehaviour
 
 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
 
     public void PlayOneTimeSound(string path)

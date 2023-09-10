@@ -443,10 +443,12 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - Bank A
   - Bank B
-  - CH1
+  - Chapter 1
+  - Chapter2
+  - Chapter3
   - Flute Bank
+  - Interactions
   - Narrator
   BanksToLoad: []
   LiveUpdatePort: 9264

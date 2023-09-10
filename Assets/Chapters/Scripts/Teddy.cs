@@ -14,7 +14,7 @@ public class Teddy : MonoBehaviour
     private StoryCanvas storyCanvas;
     public bool ShouldWave;
 
-    private string ch1_1_path = "event:/ch1_1";
+    private string ch1_1_path = "event:/Chapter1_1";
     // Start is called before the first frame update
     void Start()
     {
