@@ -8,7 +8,7 @@ public class ScreenFader : MonoBehaviour
 {
     public static ScreenFader Instance { get; private set; }
 
-    public float fadeTime = 0.5f;
+    public float fadeTime = 0.01f;
     public Color fadeColor;
     private Renderer rend;
     private void Awake()

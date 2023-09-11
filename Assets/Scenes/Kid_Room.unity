@@ -7392,7 +7392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPage: 1
   EndPage: 4
-  BookBehaviorObj: {fileID: 2122995314}
+  bookObj: {fileID: 2122995309}
 --- !u!114 &110555361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19571,7 +19571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &549477368
 Transform:
   m_ObjectHideFlags: 0
@@ -35585,7 +35585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1256699460
 Transform:
   m_ObjectHideFlags: 0
@@ -40392,7 +40392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1586740600
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -40830,7 +40830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbac7ad3ce4d4204fbf458d60fb7d709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTime: 2
+  fadeTime: 0.3
   fadeColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1594388143
 GameObject:
@@ -45064,6 +45064,7 @@ MonoBehaviour:
   Player: {fileID: 142113484}
   shouldMove: 0
   runesParticleSystem: {fileID: 0}
+  RequestedPlay: 0
 --- !u!111 &1746520706
 Animation:
   m_ObjectHideFlags: 0
@@ -55632,7 +55633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bookController: {fileID: 881096826}
-  currentState: 0
+  currentState: 2
   standinsTransform: {fileID: 1873168198}
   pagesTransform: {fileID: 629909996}
   standinQualities: 0000000000000000020000000000000000000000
@@ -55726,6 +55727,7 @@ MonoBehaviour:
   - material: {fileID: 2100000, guid: 1bf96e05ec307ce439fb8f29156480b2, type: 2}
   - material: {fileID: 2100000, guid: 54458f1f22916fc4ebc32cff9d04f1e1, type: 2}
   - material: {fileID: 2100000, guid: 0cf4bdfa4f674a145948ac5b284571fd, type: 2}
+  - material: {fileID: 2100000, guid: c148d9e37a8138f4a83f28d951d9f6e3, type: 2}
   - material: {fileID: 2100000, guid: 27e3e47034c8aad489551afaa68b280a, type: 2}
   - material: {fileID: 2100000, guid: 8ba9ab1e4467ff4438c8e72130465ac0, type: 2}
   - material: {fileID: 2100000, guid: a2d3200a8cc28d5479f579a343d6a6f3, type: 2}
@@ -55802,6 +55804,7 @@ MonoBehaviour:
   Player: {fileID: 1792568449}
   shouldMove: 0
   runesParticleSystem: {fileID: 87410165}
+  RequestedPlay: 0
 --- !u!1 &2129722820
 GameObject:
   m_ObjectHideFlags: 0
