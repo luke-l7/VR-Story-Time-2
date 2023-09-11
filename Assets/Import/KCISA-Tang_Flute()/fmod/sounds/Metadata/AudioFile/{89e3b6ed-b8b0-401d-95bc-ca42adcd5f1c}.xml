@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{89e3b6ed-b8b0-401d-95bc-ca42adcd5f1c}">
+		<property name="assetPath">
+			<value>do re mi.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>17.493333333333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1574abb1-a6ca-4e07-93f1-f7f5f1e39ac4}</destination>
+		</relationship>
+	</object>
+</objects>
