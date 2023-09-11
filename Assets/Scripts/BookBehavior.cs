@@ -35,6 +35,7 @@ public class BookBehavior : MonoBehaviour
         bookAnim = GetComponent<Animator>();
         audioManager = AudioManager.Instance;
         RequestedPlay = false;
+        runesParticleSystem.Stop();
     }
 
     // Update is called once per frame

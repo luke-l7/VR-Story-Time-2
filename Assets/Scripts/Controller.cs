@@ -51,24 +51,8 @@ public class Controller : MonoBehaviour
         float minutes = (int)time_passed / 60;
         
 
-        if (bookBehavior.shouldMove)
-        {
-           
-            runesParticleSystem.Stop();
-        }
-
-        //activate it after 8 pm if player hadnt called for book
-        else if(currTime.x >= 18f || currTime.x < 4f)
-        {
-
-            if (!runesStartedPlaying)
-            {
-                runesParticleSystem.Play();
-                runesStartedPlaying = true;
-            }
-        }
         //transition time to 19:00 to set up the scene
-        else if(currTime.x < 18 || (currTime.x > 18 && currTime.y < 5))
+        if(currTime.x < 18 || (currTime.x > 18 && currTime.y < 5))
         {
             Debug.Log("time speeding");
             timeController.StartTimelineTransition(18, 5, 20f, AzureTimeDirection.Forward);
@@ -105,7 +89,9 @@ public class Controller : MonoBehaviour
     {
         bookHoverButton.SetActive(true);
         RoomTeddy.Instance.StandUp();
+        runesParticleSystem.Play();
         Invoke("GiveSecondHint", 30); // invoke give another hint after 30 seconds - in total 1.5 mins after teddy stands up and book not touched
+
     }
 
 
