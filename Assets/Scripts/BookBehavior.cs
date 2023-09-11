@@ -17,7 +17,7 @@ public class BookBehavior : MonoBehaviour
 
     // play pages params
     private FMOD.Studio.EventInstance fmod_instance;
-    private bool RequestedPlay;
+    public bool RequestedPlay;
     private int start;
     private int end;
 
