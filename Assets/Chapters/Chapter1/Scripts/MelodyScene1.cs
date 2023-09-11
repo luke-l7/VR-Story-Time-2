@@ -19,10 +19,11 @@ public class MelodyScene1 : MonoBehaviour
     bool melodyWondered = false;
     bool readyToHop = false;
     int stage = 0;
-    private string ch1_2_path = "event:/ch1_1";
+    private string ch1_2_path = "event:/Chapter1_2";
     private string ch1_3_path = "event:/ch1_3";
     private string ch1_4_path = "event:/ch1_4";
     private string ch1_5_path = "event:/ch1-5";
+    private FMOD.Studio.EventInstance fmod_instance;
 
     List<string> paths;
 
@@ -44,7 +45,8 @@ public class MelodyScene1 : MonoBehaviour
     enum CurrState
     {
         approachingParrot,
-        withParrot
+        withParrot,
+        preFlute
 
     }
     CurrState currState = CurrState.approachingParrot;
@@ -67,6 +69,8 @@ public class MelodyScene1 : MonoBehaviour
 
     void Update()
     {
+        FMOD.Studio.PLAYBACK_STATE state;
+        fmod_instance.getPlaybackState(out state);
         //if arrived to parrot waypoint switch state
         if (currState == CurrState.approachingParrot && Vector3.Distance(waypointsArr[0].position, transform.position) < 1f)
         {
@@ -116,9 +120,14 @@ public class MelodyScene1 : MonoBehaviour
         }
         if(stage==2 && !coroutineRunning && currState == CurrState.withParrot)
         {
-            Debug.Log(stage);
             coroutineRunning = true;
             StartCoroutine(waitSecondsAndRaiseFlute(12));
+            currState = CurrState.preFlute;
+            stage++;
+        }
+        if(stage == 3 && !coroutineRunning && currState == CurrState.preFlute)
+        {
+            StartCoroutine(waitSecondsAndPlay(12, ch1_2_path));
             stage++;
         }
     }
