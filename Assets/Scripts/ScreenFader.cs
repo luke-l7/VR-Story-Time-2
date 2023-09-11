@@ -8,7 +8,11 @@ public class ScreenFader : MonoBehaviour
 {
     public static ScreenFader Instance { get; private set; }
 
+<<<<<<< HEAD
     public float fadeTime = 0.5f;
+=======
+    public float fadeTime = 1000000f;
+>>>>>>> 4899888956fa06c455ae4d23fd039bf8fec27b81
     public Color fadeColor;
     private Renderer rend;
     private void Awake()
@@ -33,11 +37,11 @@ public class ScreenFader : MonoBehaviour
     }
     IEnumerator FadeIn()
     {
-        float t = 1f;
+        float t = fadeTime;
         while (t > 0f)
         {
             t -= Time.deltaTime;
-            rend.material.SetColor("_Color", new Color(0f, 0f, 0f, t));
+            rend.material.SetColor("_Color", new Color(0f, 0f, 0f, t / 2));
             //img.color = new Color(0f, 0f, 0f, t);
             yield return 0; //wait a frame and continue
 
@@ -46,10 +50,15 @@ public class ScreenFader : MonoBehaviour
     IEnumerator FadeOut(int sceneId)
     {
         float t = 0f;
-        while (t < 1f)
+        while (t < fadeTime)
         {
+<<<<<<< HEAD
             t += Time.deltaTime * fadeTime;
             rend.material.SetColor("_Color", new Color(0f, 0f, 0f, t));
+=======
+            t += Time.deltaTime;
+            rend.material.SetColor("_Color", new Color(0f, 0f, 0f, t / 2));
+>>>>>>> 4899888956fa06c455ae4d23fd039bf8fec27b81
 
             //img.color = new Color(0f, 0f, 0f, t);
             yield return 0; //wait a frame and continue
