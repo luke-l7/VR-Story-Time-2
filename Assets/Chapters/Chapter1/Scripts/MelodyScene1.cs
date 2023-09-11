@@ -71,45 +71,55 @@ public class MelodyScene1 : MonoBehaviour
         if (currState == CurrState.approachingParrot && Vector3.Distance(waypointsArr[0].position, transform.position) < 1f)
         {
             currState = CurrState.withParrot;
+            stage++;
         }
         //parrot convo
-        if (currState == CurrState.withParrot)
+        if ( stage == 1 && currState == CurrState.withParrot)
         {
             animator.SetBool("Walk", false) ;
+            Parrot.stopMakingCommotion();
+            StartCoroutine(waitSecondsAndHop(10));
+            stage++;
 
-            Debug.Log(stage);
-            if (!startedCoroutine && stage == 0)
-            {
-                startedCoroutine = true;
-                StartCoroutine(waitSecondsAndPlay(2, paths[1]));
-                coroutineRunning = true;
-            }
-            //parrot stops making commotion
-            if (!coroutineRunning && !parrotAnswered && stage == 1)
-            {
-                approachParrot();
-                coroutineRunning = true;
-                StartCoroutine(waitSecondsAndPlay(7, paths[2]));
-                Parrot.stopMakingCommotion();
-                parrotAnswered = true;
-            }
-            //melody asks parrot
-            else if (!coroutineRunning && !melodyWondered && stage == 2)
-            {
-                melodyWondered = true;
-                coroutineRunning = true;
-                StartCoroutine(waitSecondsAndPlay(7, paths[3]));
-            }
-            //echo hops from house to house
-            else if (!coroutineRunning && !readyToHop && stage == 3)
-            {
-                Parrot.HopHouseToHouse();
+            //Parrot.HopHouseToHouse();
 
-            }
+            //if (!startedCoroutine && stage == 0)
+            //{
+            //    startedCoroutine = true;
+            //    StartCoroutine(waitSecondsAndPlay(2, paths[1]));
+            //    coroutineRunning = true;
+            //}
+            ////parrot stops making commotion
+            //if (!coroutineRunning && !parrotAnswered && stage == 1)
+            //{
+            //    approachParrot();
+            //    coroutineRunning = true;
+            //    StartCoroutine(waitSecondsAndPlay(7, paths[2]));
+            //    Parrot.stopMakingCommotion();
+            //    parrotAnswered = true;
+            //}
+            ////melody asks parrot
+            //else if (!coroutineRunning && !melodyWondered && stage == 2)
+            //{
+            //    melodyWondered = true;
+            //    coroutineRunning = true;
+            //    StartCoroutine(waitSecondsAndPlay(7, paths[3]));
+            //}
+            ////echo hops from house to house
+            //else if (!coroutineRunning && !readyToHop && stage == 3)
+            //{
+            //    Parrot.HopHouseToHouse();
+
+            //}
 
         }
     }
-
+    IEnumerator waitSecondsAndHop(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Parrot.HopHouseToHouse();
+        stage++;
+    }
     IEnumerator waitSecondsAndPlay(int seconds, string path)
     {
         yield return new WaitForSeconds(seconds);
