@@ -41,11 +41,6 @@ public class BookBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (IsInteracting())
-        //{
-        //    // Call the pointing detection method
-        //    OnPointingDetected();
-        //}
 
         // for debugging
         if(shouldMove) { moveBook(); }
@@ -56,11 +51,19 @@ public class BookBehavior : MonoBehaviour
         if (RequestedPlay && state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
         {
             GetComponent<EndlessBook>().TurnToPage(start, EndlessBook.PageTurnTimeTypeEnum.TimePerPage, 3f); // flip to start page
-            fmod_instance = FMODUnity.RuntimeManager.CreateInstance("event:/page_" + start.ToString()); // the event corresponding to the page is always names page_ + no of page in FMOD
-            fmod_instance.start();
+            //some pages have no audio in it (like picture pages) and so to keep thr fmod naming convention ignore these pages for audio
+            try
+            {
+                fmod_instance = FMODUnity.RuntimeManager.CreateInstance("event:/page_" + start.ToString()); // the event corresponding to the page is always names page_ + no of page in FMOD
+                fmod_instance.start();
+            }
+            catch 
+            {
+                UnityEngine.Debug.Log($"audio-less page, start = {start}, end = {end}");
+            }
             start++;
         }
-        if(start > end) { RequestedPlay = false; }
+        if (start > end) { RequestedPlay = false; }
     }
 
     public void moveBook()
