@@ -8,7 +8,7 @@ public class ScreenFader : MonoBehaviour
 {
     public static ScreenFader Instance { get; private set; }
 
-    public float fadeTime = 2f;
+    public float fadeTime = 0.5f;
     public Color fadeColor;
     private Renderer rend;
     private void Awake()
@@ -48,7 +48,7 @@ public class ScreenFader : MonoBehaviour
         float t = 0f;
         while (t < 1f)
         {
-            t += Time.deltaTime;
+            t += Time.deltaTime * fadeTime;
             rend.material.SetColor("_Color", new Color(0f, 0f, 0f, t));
 
             //img.color = new Color(0f, 0f, 0f, t);
