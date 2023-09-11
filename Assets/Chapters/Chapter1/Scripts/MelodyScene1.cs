@@ -79,6 +79,7 @@ public class MelodyScene1 : MonoBehaviour
             animator.SetBool("Walk", false) ;
             Parrot.stopMakingCommotion();
             StartCoroutine(waitSecondsAndHop(10));
+            coroutineRunning = true;
             stage++;
 
             //Parrot.HopHouseToHouse();
@@ -113,12 +114,27 @@ public class MelodyScene1 : MonoBehaviour
             //}
 
         }
+        if(stage==2 && !coroutineRunning && currState == CurrState.withParrot)
+        {
+            Debug.Log(stage);
+            coroutineRunning = true;
+            StartCoroutine(waitSecondsAndRaiseFlute(12));
+            stage++;
+        }
     }
     IEnumerator waitSecondsAndHop(int seconds)
     {
+
         yield return new WaitForSeconds(seconds);
+        coroutineRunning = false;
         Parrot.HopHouseToHouse();
-        stage++;
+    }
+    IEnumerator waitSecondsAndRaiseFlute(int seconds)
+    {
+
+        yield return new WaitForSeconds(seconds);
+        coroutineRunning = false;
+        animator.SetTrigger("RaiseFlute");
     }
     IEnumerator waitSecondsAndPlay(int seconds, string path)
     {
