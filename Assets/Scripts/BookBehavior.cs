@@ -81,5 +81,10 @@ public class BookBehavior : MonoBehaviour
         this.start = start;
         this.end = end;
     }
+
+    public void ActivateSceneAnimation()
+    {
+        bookAnim.SetBool("startScene", true);
+    }
 }
 

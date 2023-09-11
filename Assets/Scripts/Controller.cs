@@ -25,7 +25,6 @@ public class Controller : MonoBehaviour
     //debug
     public bool SwitchScene = false;
     public bool teddyStandUp = false;
-    
 
     private void Start()
     {
@@ -81,8 +80,8 @@ public class Controller : MonoBehaviour
 
         if (SwitchScene)
         {
+            transitionToScene();
             //SceneController.Instance.TransitionToScene(3);
-            ScreenFader.Instance.FadeTo(3);
         }
         if (teddyStandUp)
         {
@@ -120,5 +119,16 @@ public class Controller : MonoBehaviour
         {
             RoomTeddy.Instance.GiveAnotherHint();
         }
-    }    
+    } 
+    /**
+     * activate book animation and then fade out to story scene
+     */
+    private void transitionToScene()
+    {
+        //activate book animation
+
+        bookBehavior.ActivateSceneAnimation();
+        ScreenFader.Instance.FadeTo(3);
+
+    }
 }
