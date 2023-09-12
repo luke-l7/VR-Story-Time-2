@@ -76,7 +76,11 @@ public class FluteInteractor : MonoBehaviour
         {
             returnCubeNote(song[curr_note]).SetActive(true);
         }
-        returnCubeNote(song[curr_note]).SetActive(true);
+        else
+        {
+            Chapter1Controller.Instance.DonePlayingFlute = true;
+        }
+        // returnCubeNote(song[curr_note]).SetActive(true);
     }
 }
 

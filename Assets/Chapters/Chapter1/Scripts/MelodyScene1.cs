@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,6 +10,7 @@ public class MelodyScene1 : MonoBehaviour
     Animator animator;
     NavMeshAgent agent;
     Ch1AudioManager audioManager;
+    public GameObject fluteObj;
     public GameObject waypoints;
     public Transform[] waypointsArr;
     private StoryCanvas storyCanvas;
@@ -123,12 +125,23 @@ public class MelodyScene1 : MonoBehaviour
             coroutineRunning = true;
             StartCoroutine(waitSecondsAndRaiseFlute(12));
             currState = CurrState.preFlute;
+            StartCoroutine(waitSecondsAndShowFlute(26));
             stage++;
+
         }
-        if(stage == 3 && !coroutineRunning && Chapter1Controller.Instance.DonePlayingFlute)
+        if (stage == 3 && !coroutineRunning && Chapter1Controller.Instance.DonePlayingFlute)
         {
-            StartCoroutine(waitSecondsAndPlay(2, ch1_2_path));
+            audioManager.PlayOneTimeSound("event:/good_job");
+            StartCoroutine(waitSecondsAndPlay(7, ch1_2_path));
+            coroutineRunning= true;
             stage++;
+
+        }
+        //done playing last audio line for this chapter
+        if (stage == 4 && !coroutineRunning)
+        {
+            //fade back to kid's room
+            StartCoroutine(waitSecondsAndFadeBack(5));
         }
     }
     IEnumerator waitSecondsAndHop(int seconds)
@@ -142,7 +155,7 @@ public class MelodyScene1 : MonoBehaviour
     {
 
         yield return new WaitForSeconds(seconds);
-        coroutineRunning = false;
+        //coroutineRunning = false;
         animator.SetTrigger("RaiseFlute");
     }
     IEnumerator waitSecondsAndPlay(int seconds, string path)
@@ -150,9 +163,24 @@ public class MelodyScene1 : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         audioManager.PlayOneTimeSound(path);
         storyCanvas.ChangeText();
-
         coroutineRunning = false;
         stage++;
+    }
+    IEnumerator waitSecondsAndFadeBack(int seconds)
+    {
+
+        yield return new WaitForSeconds(seconds);
+        coroutineRunning = false;
+        ScreenFader.Instance.FadeTo(1);
+    }
+    IEnumerator waitSecondsAndShowFlute(int seconds)
+    {
+
+        yield return new WaitForSeconds(seconds);
+        audioManager.PlayOneTimeSound("event:/before_flute_interact");
+        fluteObj.SetActive(true);
+        coroutineRunning = false;
+
     }
     private void approachParrot()
     {

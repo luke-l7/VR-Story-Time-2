@@ -31,6 +31,7 @@ public class ScreenFader : MonoBehaviour
     {
         StartCoroutine(FadeOut(sceneId));
     }
+
     IEnumerator FadeIn()
     {
         float t = 1f;
