@@ -17,6 +17,9 @@ public class Chapter1Controller : MonoBehaviour
     public Transform donkeyCanvas;
     string pig1 = "i want me some pineapples!";
     string donkey1 = "no pineapples here";
+
+    public  bool DonePlayingFlute = false;
+    public static Chapter1Controller Instance { get; private set; }
     enum GameState
     {
         melodyWaiting,
@@ -26,6 +29,14 @@ public class Chapter1Controller : MonoBehaviour
     GameState currState= GameState.melodyWaiting;
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     // Start is called before the first frame update
     void Start()

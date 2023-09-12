@@ -125,9 +125,9 @@ public class MelodyScene1 : MonoBehaviour
             currState = CurrState.preFlute;
             stage++;
         }
-        if(stage == 3 && !coroutineRunning && currState == CurrState.preFlute)
+        if(stage == 3 && !coroutineRunning && Chapter1Controller.Instance.DonePlayingFlute)
         {
-            StartCoroutine(waitSecondsAndPlay(12, ch1_2_path));
+            StartCoroutine(waitSecondsAndPlay(2, ch1_2_path));
             stage++;
         }
     }
