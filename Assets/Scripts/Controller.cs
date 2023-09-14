@@ -1,6 +1,7 @@
 using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AzureSky;
 
@@ -16,7 +17,6 @@ public class Controller : MonoBehaviour
 
     private AzureTimeController timeController;
     private bool speedUpTime;
-    private bool runesStartedPlaying;
     public ParticleSystem runesParticleSystem;
     private Animator bookAnim;
     // time before teddy stands up
@@ -26,22 +26,39 @@ public class Controller : MonoBehaviour
     public bool SwitchScene = false;
     public bool teddyStandUp = false;
 
+
     private void Start()
     {
         runesParticleSystem.Stop();
-        runesStartedPlaying = false;
-
         speedUpTime = false;
         bookBehavior = book.GetComponent<BookBehavior>();
         cameraBehavior = cameraObj.GetComponent<BloomEffect>();
-        timeController= skybox.GetComponent<AzureTimeController>();
+        timeController = skybox.GetComponent<AzureTimeController>();
+        if (SceneLoadClass.SceneToLoad == 0)
+        {
+            time_passed = 0.0f;
+            bookAnim = book.GetComponent<Animator>();
+            // activate teddy stand up and book interaction after NO_OF_SECONDS - see ActivateTeddyInteraction function below.
+            Invoke("ActivateTeddyInteraction", NO_OF_SECONDS);
+        }
+        else // return Scene to previous state
+        {
+            // teddy is up with cheerSpeech
+            RoomTeddy.Instance.StandUp();
+            RoomTeddy.Instance.CheerSpeech();
+            // book is back to playing state
+            bookBehavior.openBook();
+            bookAnim.SetBool("backFromScene", true);
 
-        time_passed = 0.0f;
+            switch(SceneLoadClass.SceneToLoad)
+            {
+                case 1: GetComponent<Scene2>().enabled = true; break; // back from scene1, activate scene2
+                case 2: GetComponent<Scene3>().enabled = true; break;
+                case 3: GetComponent<Scene4>().enabled = true; break;
+                case 4: GetComponent<Scene5>().enabled = true; break;
+            }
+        }
 
-        bookAnim = book.GetComponent<Animator>();
-
-        // activate teddy stand up and book interaction after NO_OF_SECONDS - see ActivateTeddyInteraction function below.
-        Invoke("ActivateTeddyInteraction", NO_OF_SECONDS); 
 
     }
     void Update()
@@ -54,7 +71,7 @@ public class Controller : MonoBehaviour
         //transition time to 19:00 to set up the scene
         if(currTime.x < 18 || (currTime.x > 18 && currTime.y < 5))
         {
-            Debug.Log("time speeding");
+            UnityEngine.Debug.Log("time speeding");
             timeController.StartTimelineTransition(18, 5, 20f, AzureTimeDirection.Forward);
 
         }

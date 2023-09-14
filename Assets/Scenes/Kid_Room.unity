@@ -7337,6 +7337,7 @@ GameObject:
   - component: {fileID: 110555358}
   - component: {fileID: 110555361}
   - component: {fileID: 110555360}
+  - component: {fileID: 110555362}
   m_Layer: 0
   m_Name: StoryController
   m_TagString: Untagged
@@ -7413,6 +7414,18 @@ MonoBehaviour:
       Data4: -494876809
     Path: event:/welcome_speech
   Book: {fileID: 2122995309}
+--- !u!114 &110555362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110555357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e149ff01b98021d4aa6f4b81299f2782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &113382167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 609f1d73c67671c488829d87d286ce92, type: 3}

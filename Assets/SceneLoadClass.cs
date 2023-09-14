@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class SceneLoadClass
 {
-    public static string SceneToLoad { get; set; }
+    public static int SceneToLoad { get; set; }
 }
