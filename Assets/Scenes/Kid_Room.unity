@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0048126904, g: 0.026118048, b: 0.08460347, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7391,7 +7391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b535b3143b32b4f9925a9523482333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPage: 1
+  StartPage: 3
   EndPage: 4
   bookObj: {fileID: 2122995309}
 --- !u!114 &110555361
@@ -41593,11 +41593,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1451733433
-      Data2: 1137276467
-      Data3: -1235298937
-      Data4: -585399123
-    Path: event:/roomMusic
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   Event: 
   PlayEvent: 1
   StopEvent: 0

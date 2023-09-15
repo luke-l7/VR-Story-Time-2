@@ -53,9 +53,9 @@ public class Controller : MonoBehaviour
             switch(SceneLoadClass.SceneToLoad)
             {
                 case 1: GetComponent<Scene2>().enabled = true; break; // back from scene1, activate scene2
-                case 2: GetComponent<Scene3>().enabled = true; break;
-                case 3: GetComponent<Scene4>().enabled = true; break;
-                case 4: GetComponent<Scene5>().enabled = true; break;
+                //case 2: GetComponent<Scene3>().enabled = true; break;
+                //case 3: GetComponent<Scene4>().enabled = true; break;
+                //case 4: GetComponent<Scene5>().enabled = true; break;
             }
         }
 
@@ -131,6 +131,7 @@ public class Controller : MonoBehaviour
         //activate book animation
 
         bookBehavior.ActivateSceneAnimation();
+        AudioManager.Instance.StopMainMusic();
         ScreenFader.Instance.FadeTo(3);
 
     }

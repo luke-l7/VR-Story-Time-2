@@ -28,6 +28,7 @@ public class Scene1 : MonoBehaviour
         if(!BookBehaviorObj.RequestedPlay) // means scene is finished playing
         {
             bookAnim.SetBool("enterScene", true);
+            AudioManager.Instance.StopMainMusic();
             ScreenFader.Instance.FadeTo(3);
         }
     }

@@ -38,18 +38,23 @@ public class AudioManager : MonoBehaviour
         currentInstance.start();
 
     }
+    public void StopMainMusic()
+    {
+        StartCoroutine(stopAfterXSeconds(currentInstance, 4));
+    }
 
     public void ActivateBookSound()
     {
         music.setParameterByName("Parameter 3", 1);
     }
-    public void PlayFirstLevelMusic()
-    {
-        currentInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
-    }
     public void FirstChapter()
     {
 
+    }
+    IEnumerator stopAfterXSeconds(FMOD.Studio.EventInstance instance, int x)
+    {
+        yield return new WaitForSeconds(x);
+        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 }
