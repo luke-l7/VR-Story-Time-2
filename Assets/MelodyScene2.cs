@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class MelodyScene2 : MonoBehaviour
 {
-    NavMeshAgent agent;
-    Animator animator;
     public GameObject waypoints;
     public Transform[] waypointsArr;
     public static MelodyScene2 Instance { get; private set; }
+
+    NavMeshAgent agent;
+    Animator animator;
 
     private void Awake()
     {
@@ -41,7 +43,13 @@ public class MelodyScene2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+            
         agent.SetDestination(waypointsArr[0].position);
         
+    }
+    public void stopWalking()
+    {
+        animator.SetBool("Walk", false);
+
     }
 }
