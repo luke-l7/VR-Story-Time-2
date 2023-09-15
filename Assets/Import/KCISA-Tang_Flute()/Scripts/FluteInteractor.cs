@@ -72,7 +72,7 @@ public class FluteInteractor : MonoBehaviour
         string[] song = returnChosenSong(SongNumber);
         returnCubeNote(song[curr_note]).SetActive(false);
         curr_note++;
-        if (curr_note < song.Length - 1)
+        if (curr_note < song.Length)
         {
             returnCubeNote(song[curr_note]).SetActive(true);
         }
