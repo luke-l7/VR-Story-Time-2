@@ -83,8 +83,8 @@ public class MelodyScene1 : MonoBehaviour
         if ( stage == 1 && currState == CurrState.withParrot)
         {
             animator.SetBool("Walk", false) ;
-            Parrot.stopMakingCommotion();
-            StartCoroutine(waitSecondsAndHop(10));
+            Parrot.Instance.stopMakingCommotion();
+            StartCoroutine(waitSecondsAndHop(6));
             coroutineRunning = true;
             stage++;
 
@@ -149,7 +149,7 @@ public class MelodyScene1 : MonoBehaviour
 
         yield return new WaitForSeconds(seconds);
         coroutineRunning = false;
-        Parrot.HopHouseToHouse();
+        Parrot.Instance.HopHouseToHouse();
     }
     IEnumerator waitSecondsAndRaiseFlute(int seconds)
     {
@@ -157,6 +157,8 @@ public class MelodyScene1 : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         //coroutineRunning = false;
         animator.SetTrigger("RaiseFlute");
+        Parrot.Instance.stopMakingCommotion();
+
     }
     IEnumerator waitSecondsAndPlay(int seconds, string path)
     {

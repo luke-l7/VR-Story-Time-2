@@ -113,7 +113,7 @@ public class MelodyCh1 : MonoBehaviour
                 approachParrot();
                 coroutineRunning = true ;
                 StartCoroutine(waitSecondsAndPlay(7, paths[2]));
-                Parrot.stopMakingCommotion();
+                Parrot.Instance.stopMakingCommotion();
                 parrotAnswered = true;
             }
             //melody asks parrot
@@ -126,7 +126,7 @@ public class MelodyCh1 : MonoBehaviour
             //echo hops from house to house
             else if(!coroutineRunning && !readyToHop && stage ==3)
             {
-                Parrot.HopHouseToHouse();
+                Parrot.Instance.HopHouseToHouse();
 
             }
 
