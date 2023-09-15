@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class test : MonoBehaviour
+{
+    NavMeshAgent agent;
+    public Transform s;
+    // Start is called before the first frame update
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Debug.Log(agent.isActiveAndEnabled);
+        agent.SetDestination(s.position);
+    }
+}

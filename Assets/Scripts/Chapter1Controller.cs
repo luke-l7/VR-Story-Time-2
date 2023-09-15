@@ -63,7 +63,7 @@ public class Chapter1Controller : MonoBehaviour
         if(currState == GameState.melodyParrotConvo)
         {
             Vector3 direction = Parrot.transform.position - Melody.transform.position;
-            direction.y = 0;
+            direction.y = 0;    
             if (direction != Vector3.zero)
             {
                 Melody.transform.rotation = Quaternion.LookRotation(direction);
