@@ -137,15 +137,18 @@ public class MelodyScene1 : MonoBehaviour
         {
             audioManager.PlayOneTimeSound("event:/good_job");
             StartCoroutine(waitSecondsAndPlay(7, ch1_2_path));
-            coroutineRunning= true;
+            coroutineRunning = true;
             stage++;
+            UnityEngine.Debug.Log("stage is");
+            UnityEngine.Debug.Log(stage);
 
         }
         //done playing last audio line for this chapter
         if (stage == 4 && !coroutineRunning)
         {
+            UnityEngine.Debug.Log("entered for fadeBack");
             //fade back to kid's room
-            StartCoroutine(waitSecondsAndFadeBack(5));
+            StartCoroutine(waitSecondsAndFadeBack(12));
         }
     }
     IEnumerator waitSecondsAndHop(int seconds)
@@ -170,14 +173,15 @@ public class MelodyScene1 : MonoBehaviour
         audioManager.PlayOneTimeSound(path);
         storyCanvas.ChangeText();
         coroutineRunning = false;
-        stage++;
     }
     IEnumerator waitSecondsAndFadeBack(int seconds)
     {
 
         yield return new WaitForSeconds(seconds);
         coroutineRunning = false;
+        SceneLoadClass.SceneToLoad = 1;
         ScreenFader.Instance.FadeTo(1);
+
     }
     IEnumerator waitSecondsAndShowFlute(int seconds)
     {

@@ -34,10 +34,10 @@ public class Controller : MonoBehaviour
         bookBehavior = book.GetComponent<BookBehavior>();
         cameraBehavior = cameraObj.GetComponent<BloomEffect>();
         timeController = skybox.GetComponent<AzureTimeController>();
+        bookAnim = book.GetComponent<Animator>();
         if (SceneLoadClass.SceneToLoad == 0)
         {
             time_passed = 0.0f;
-            bookAnim = book.GetComponent<Animator>();
             // activate teddy stand up and book interaction after NO_OF_SECONDS - see ActivateTeddyInteraction function below.
             Invoke("ActivateTeddyInteraction", NO_OF_SECONDS);
         }
