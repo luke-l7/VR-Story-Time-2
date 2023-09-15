@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Chapter2Controller : MonoBehaviour
 {
     public GameObject melody;
+    public GameObject parrot;
     public GameObject turtle;
 
     private FMOD.Studio.EventInstance audioInstance;
@@ -35,6 +36,16 @@ public class Chapter2Controller : MonoBehaviour
             audioInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter2_1");
             audioInstance.start();
             stage++;
+        }
+        else if(stage == 2)
+        {
+            Vector3 direction = turtle.transform.position - melody.transform.position;
+            direction.y = 0;
+            if (direction != Vector3.zero)
+            {
+                melody.transform.rotation = Quaternion.LookRotation(direction);
+                parrot.transform.rotation = Quaternion.LookRotation(direction);
+            }
         }
     }
 }

@@ -38,6 +38,7 @@ public class MelodyScene2 : MonoBehaviour
         }
         animator = GetComponent<Animator>();
         animator.SetBool("Walk", true);
+        ParrotScene2.Instance.ToggleWalk();
     }
 
     // Update is called once per frame
@@ -50,6 +51,8 @@ public class MelodyScene2 : MonoBehaviour
     public void stopWalking()
     {
         animator.SetBool("Walk", false);
+        ParrotScene2.Instance.ToggleWalk();
+
 
     }
 }
