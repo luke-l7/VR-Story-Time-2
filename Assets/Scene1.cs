@@ -1,4 +1,4 @@
-using System.Collections;
+   using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
@@ -25,7 +25,7 @@ public class Scene1 : MonoBehaviour
     void Update()
     {
         // check whether RequestedPlay in BookBehavior is false, if yes then move scene
-        if(!BookBehaviorObj.RequestedPlay) // means scene is finished playing
+        if(!BookBehaviorObj.RequestedPlay) // means s             cene is finished playing
         {
             bookAnim.SetBool("enterScene", true);
             AudioManager.Instance.StopMainMusic();

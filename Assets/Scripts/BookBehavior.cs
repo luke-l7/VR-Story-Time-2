@@ -36,6 +36,13 @@ public class BookBehavior : MonoBehaviour
         audioManager = AudioManager.Instance;
         RequestedPlay = false;
         runesParticleSystem.Stop();
+
+        if(SceneLoadClass.SceneToLoad != 0) // if back from scene
+        {
+            GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenMiddle, 0f);
+            bookAnim.SetBool("backFromScene", true);
+        }
+
     }
 
     // Update is called once per frame

@@ -8,6 +8,7 @@ public class RoomTeddy : MonoBehaviour
     private string bookHint1 = "Dont you think that book over by the window looks suspicios?";
     private string bookHint2 = "Maybe try extending your hand to it?";
     private string bookCheer = "How Magical!";
+    private bool isStartCalled = false;
     public static RoomTeddy Instance { get; private set; }
     public PopupSystem popupSystem;
     private void Awake()
@@ -25,13 +26,26 @@ public class RoomTeddy : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        if (SceneLoadClass.SceneToLoad != 0) // if back from scene
+        {
+            StandUp();
+            CheerSpeech();
+        }
+        else
+        {
+            isStartCalled = true;
+        }
     }
 
     public void StandUp()
     {
+        animator = GetComponent<Animator>();
         animator.SetTrigger("StandUp");
-        FMODUnity.RuntimeManager.PlayOneShot("event:/teddy_bear_hint_1");
-        popupSystem.ShowPopUp(bookHint1);
+        if(isStartCalled) // this helps determine if the standup function was called after some chapter or start of game
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/teddy_bear_hint_1");
+            popupSystem.ShowPopUp(bookHint1);
+        }
     }
 
     public void GiveAnotherHint()
@@ -42,7 +56,10 @@ public class RoomTeddy : MonoBehaviour
 
     public void CheerSpeech() // changes teddy popup to a cheer
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/teddy_bear_cheer");
-        popupSystem.ShowPopUp(bookCheer);
+        if(isStartCalled)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/teddy_bear_cheer");
+            popupSystem.ShowPopUp(bookCheer);
+        }
     }
 }

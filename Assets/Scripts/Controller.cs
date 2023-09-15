@@ -29,6 +29,7 @@ public class Controller : MonoBehaviour
 
     private void Start()
     {
+        
         runesParticleSystem.Stop();
         speedUpTime = false;
         bookBehavior = book.GetComponent<BookBehavior>();
@@ -43,14 +44,8 @@ public class Controller : MonoBehaviour
         }
         else // return Scene to previous state
         {
-            // teddy is up with cheerSpeech
-            RoomTeddy.Instance.StandUp();
-            RoomTeddy.Instance.CheerSpeech();
-            // book is back to playing state
-            bookBehavior.openBook();
-            bookAnim.SetBool("backFromScene", true);
-
-            switch(SceneLoadClass.SceneToLoad)
+            //ScreenFader.Instance.FadeBack();
+            switch (SceneLoadClass.SceneToLoad)
             {
                 case 1: GetComponent<Scene2>().enabled = true; break; // back from scene1, activate scene2
                 //case 2: GetComponent<Scene3>().enabled = true; break;
@@ -132,7 +127,7 @@ public class Controller : MonoBehaviour
 
         bookBehavior.ActivateSceneAnimation();
         AudioManager.Instance.StopMainMusic();
+        SceneLoadClass.SceneToLoad = 0; // reset scene so Fader properies dont change
         ScreenFader.Instance.FadeTo(3);
-
     }
 }
