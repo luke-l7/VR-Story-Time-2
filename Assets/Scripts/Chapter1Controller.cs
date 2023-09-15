@@ -47,13 +47,27 @@ public class Chapter1Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currState == GameState.melodyWaiting && Vector3.Distance(Parrot.transform.position, Player.transform.position) < 5f)
+        //if (currState == GameState.melodyWaiting && Vector3.Distance(Parrot.transform.position, Player.transform.position) < 5f)
+        //{
+        //    MelodyCh1.Instance.shouldWait = false;
+        //}
+        //if (currState == GameState.melodyWaiting && Vector3.Distance(PigDonkey.transform.position, Player.transform.position) < 5f)
+        //{
+        //    initiaiteConversationPigDonkey();
+        //}
+        if(currState!= GameState.melodyParrotConvo && Melody.GetComponent<MelodyScene1>().currState == MelodyScene1.CurrState.withParrot)
         {
-            MelodyCh1.Instance.shouldWait = false;
+            currState = GameState.melodyParrotConvo;
         }
-        if (currState == GameState.melodyWaiting && Vector3.Distance(PigDonkey.transform.position, Player.transform.position) < 5f)
+        //when talking let melody look at the parrot
+        if(currState == GameState.melodyParrotConvo)
         {
-            initiaiteConversationPigDonkey();
+            Vector3 direction = Parrot.transform.position - Melody.transform.position;
+            direction.y = 0;
+            if (direction != Vector3.zero)
+            {
+                Melody.transform.rotation = Quaternion.LookRotation(direction);
+            }
         }
     }
     void initiaiteConversationPigDonkey()

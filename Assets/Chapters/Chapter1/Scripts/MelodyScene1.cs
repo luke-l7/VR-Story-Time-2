@@ -44,14 +44,14 @@ public class MelodyScene1 : MonoBehaviour
 
 
     }
-    enum CurrState
+    public enum CurrState
     {
         approachingParrot,
         withParrot,
         preFlute
 
     }
-    CurrState currState = CurrState.approachingParrot;
+    public CurrState currState = CurrState.approachingParrot;
 
     void Start()
     {
@@ -79,6 +79,10 @@ public class MelodyScene1 : MonoBehaviour
             currState = CurrState.withParrot;
             stage++;
         }
+        //else if(currState == CurrState.withParrot) 
+        //{
+        //    transform.LookAt(par)
+        //}
         //parrot convo
         if ( stage == 1 && currState == CurrState.withParrot)
         {
