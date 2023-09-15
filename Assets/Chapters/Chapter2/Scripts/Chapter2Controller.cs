@@ -49,13 +49,12 @@ public class Chapter2Controller : MonoBehaviour
         
         else if(stage == 2)
         {
-            Debug.Log(oneTimeCoroutine);
             FMOD.Studio.PLAYBACK_STATE state;
             audioInstance.getPlaybackState(out state);
             //melody stopped thinking and about to play flute
             if (!oneTimeCoroutine && state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
             {
-                StartCoroutine(waitSecondsAndPlay(2, "event:/before_flute_interact"));
+                StartCoroutine(waitSecondsAndPlayOneShot(2, "event:/before_flute_interact"));
                 fluteObj.SetActive(true);
                 oneTimeCoroutine= true;
             }
@@ -69,17 +68,30 @@ public class Chapter2Controller : MonoBehaviour
             }
             if (DonePlayingFlute)
             {
-                StartCoroutine(waitSecondsAndPlay(2, "event:/good_job"));
+                StartCoroutine(waitSecondsAndPlayOneShot(2, "event:/good_job"));
                 stage++;
             }
+        }
+        else if(stage==3)
+        {
+            audioInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter2_2");
+            StartCoroutine(waitSecondsAndPlayEvent(8, audioInstance));
+
+            stage++;
         }
         
         
     }
-    IEnumerator waitSecondsAndPlay(int seconds, string path)
+    IEnumerator waitSecondsAndPlayOneShot(int seconds, string path)
     {
         yield return new WaitForSeconds(seconds);
         RuntimeManager.PlayOneShot(path);
         coroutineRunning= false;
+    }
+    IEnumerator waitSecondsAndPlayEvent(int seconds, FMOD.Studio.EventInstance audioEvent)
+    {
+        yield return new WaitForSeconds(seconds);
+        audioEvent.start();
+        coroutineRunning = false;
     }
 }
