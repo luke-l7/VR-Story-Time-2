@@ -10,10 +10,13 @@ public class ForestBook : MonoBehaviour
     public bool trigger1; //for debug purposes- serve as triggers that replace player hands pointing at book
     public bool trigger2;
     public bool trigger3;
+
+    Animator animator;
     int stage = 0;
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         bookLocationsArr = new Transform[bookLocations.transform.childCount];
         for (int i = 0; i < bookLocations.transform.childCount; i++)
         {
@@ -40,6 +43,7 @@ public class ForestBook : MonoBehaviour
         else if(stage == 2 && trigger3)
         {
             //initiate book animation and advance story
+            animator.enabled= true;
             stage++;
         }
 
