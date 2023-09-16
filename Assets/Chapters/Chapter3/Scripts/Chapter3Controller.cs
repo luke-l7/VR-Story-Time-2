@@ -28,18 +28,19 @@ public class Chapter3Controller : MonoBehaviour
     void Update()
     {
         //melody walking towards tree
-        if (stage == 0 && Vector3.Distance(melody.transform.position, owl.transform.position) < 7f)
+        if (stage == 0 && Vector3.Distance(melody.transform.position, owl.transform.position) < 8f)
         {
             stage++;
         }
         else if (stage == 1)
         {
-            melody.GetComponent<MelodyScene2>().stopWalking();
+            melody.GetComponent<MelodyScene3>().stopWalking();
             audioInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter3");
-            audioInstance.start();
+            waitSecondsAndPlayEvent(2, audioInstance);
+            coroutineRunning= true;
             stage++;
         }
-        else if (stage == 2)
+        else if (!coroutineRunning && stage == 2)
         {
             FMOD.Studio.PLAYBACK_STATE state;
             audioInstance.getPlaybackState(out state);

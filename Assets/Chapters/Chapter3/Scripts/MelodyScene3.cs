@@ -29,6 +29,10 @@ public class MelodyScene3 : MonoBehaviour
         {
             waypointsArr[i] = waypoints.transform.GetChild(i);
         }
+        
+    }
+    private void Start()
+    {
         animator = GetComponent<Animator>();
         animator.SetBool("Walk", true);
         ParrotScene2.Instance.ToggleWalk();
@@ -39,7 +43,6 @@ public class MelodyScene3 : MonoBehaviour
         animator.SetBool("Walk", false);
         ParrotScene2.Instance.ToggleWalk();
         TurtleScene3.Instance.ToggleWalk();
-
     }
 
     // Update is called once per frame

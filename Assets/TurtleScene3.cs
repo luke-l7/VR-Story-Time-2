@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurtleScene3 : MonoBehaviour
 {
-    Animator animator;
+    Animator animator ;
     public static TurtleScene3 Instance { get; private set; }
 
     private void Awake()
