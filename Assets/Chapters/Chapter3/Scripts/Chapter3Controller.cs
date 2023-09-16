@@ -68,6 +68,12 @@ public class Chapter3Controller : MonoBehaviour
             }
             
         }
+        //fade back to bedroom
+        if(stage == 3)
+        {
+            SceneLoadClass.SceneToLoad = 1;
+            ScreenFader.Instance.FadeTo(1);
+        }
     }
     IEnumerator waitSecondsAndPlayOneShot(int seconds, string path)
     {
