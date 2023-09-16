@@ -24,10 +24,7 @@ public class Chapter2Controller : MonoBehaviour
         TurtleConvo
     }
     GameState currState = GameState.WalkingToTurutle;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+
 
     // Update is called once per frame
     void Update()

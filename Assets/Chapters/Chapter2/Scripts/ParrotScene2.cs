@@ -17,14 +17,9 @@ public class ParrotScene2 : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        animator= GetComponent<Animator>();
-    }
+        animator = GetComponent<Animator>();
 
-
+    }
     public void ToggleWalk()
     {
         bool walking = animator.GetBool("Walk");
