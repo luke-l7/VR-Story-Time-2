@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParrotScene2 : MonoBehaviour
+public class TurtleScene3 : MonoBehaviour
 {
     Animator animator;
-    public static ParrotScene2 Instance { get; private set; }
+    public static TurtleScene3 Instance { get; private set; }
 
     private void Awake()
     {
