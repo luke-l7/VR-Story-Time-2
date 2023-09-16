@@ -35,9 +35,11 @@ public class Chapter3Controller : MonoBehaviour
         {
             stage++;
         }
+        //owl talks to melody
         else if (stage == 1)
         {
             melody.GetComponent<MelodyScene3>().stopWalking();
+            owl.GetComponent<Animator>().SetBool("Talking", true);
             ambienceInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             ambienceInstance = FMODUnity.RuntimeManager.CreateInstance("event:/night without hooting");
             ambienceInstance.start();
@@ -50,10 +52,9 @@ public class Chapter3Controller : MonoBehaviour
         {
             FMOD.Studio.PLAYBACK_STATE state;
             dialogueInstance.getPlaybackState(out state);
-            //melody stopped thinking and about to play flute
+            //chapter audio finished playing
             if (!oneTimeCoroutine && state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
             {
-                //what to do when finished playing
                 stage++;
             }
             //make melody parrot and turtle look at owl
