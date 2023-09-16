@@ -65,7 +65,9 @@ public class Chapter2Controller : MonoBehaviour
             }
             if (DonePlayingFlute)
             {
-                StartCoroutine(waitSecondsAndPlayOneShot(2, "event:/good_job"));
+                StartCoroutine(waitSecondsAndPlayOneShot(1, "event:/good_job"));
+                TurtleScene2.Instance.PlayHappyAnimation();
+
                 stage++;
             }
         }
