@@ -36,7 +36,7 @@ public class Chapter3Controller : MonoBehaviour
         {
             melody.GetComponent<MelodyScene3>().stopWalking();
             audioInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter3");
-            waitSecondsAndPlayEvent(2, audioInstance);
+            StartCoroutine(waitSecondsAndPlayEvent(2, audioInstance));
             coroutineRunning= true;
             stage++;
         }
