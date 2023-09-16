@@ -12,7 +12,9 @@ public class Chapter3Controller : MonoBehaviour
     public GameObject turtle;
     public GameObject owl;
 
-    private FMOD.Studio.EventInstance audioInstance;
+    private FMOD.Studio.EventInstance dialogueInstance;
+    private FMOD.Studio.EventInstance ambienceInstance;
+
     bool coroutineRunning = false;
     bool oneTimeCoroutine = false;
 
@@ -21,7 +23,8 @@ public class Chapter3Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ambienceInstance = FMODUnity.RuntimeManager.CreateInstance("event:/night with hooting");
+        ambienceInstance.start();
     }
 
     // Update is called once per frame
@@ -35,15 +38,18 @@ public class Chapter3Controller : MonoBehaviour
         else if (stage == 1)
         {
             melody.GetComponent<MelodyScene3>().stopWalking();
-            audioInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter3");
-            StartCoroutine(waitSecondsAndPlayEvent(2, audioInstance));
+            ambienceInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            ambienceInstance = FMODUnity.RuntimeManager.CreateInstance("event:/night without hooting");
+            ambienceInstance.start();
+            dialogueInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter3");
+            StartCoroutine(waitSecondsAndPlayEvent(2, dialogueInstance));
             coroutineRunning= true;
             stage++;
         }
         else if (!coroutineRunning && stage == 2)
         {
             FMOD.Studio.PLAYBACK_STATE state;
-            audioInstance.getPlaybackState(out state);
+            dialogueInstance.getPlaybackState(out state);
             //melody stopped thinking and about to play flute
             if (!oneTimeCoroutine && state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
             {

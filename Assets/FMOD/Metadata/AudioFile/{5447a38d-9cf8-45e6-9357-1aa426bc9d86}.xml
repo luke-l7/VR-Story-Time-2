@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5447a38d-9cf8-45e6-9357-1aa426bc9d86}">
+		<property name="assetPath">
+			<value>Night ambience Sound Effect Free Music Royalty.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>65.697959183673476</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{31e9968a-b601-48e0-9b67-36c3dd4f2631}</destination>
+		</relationship>
+	</object>
+</objects>
