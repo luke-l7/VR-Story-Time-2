@@ -28,7 +28,7 @@ public class Hen : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, waypointsArr[currWpId].position) < 0.2f)
         {
-            currWpId = currWpId >= waypointsArr.Length ? waypointsArr.Length-1 : currWpId+1 ;
+            currWpId = currWpId >= waypointsArr.Length - 1 ? waypointsArr.Length-1 : currWpId+1 ;
         }
         agent.SetDestination(waypointsArr[currWpId].position);
         if(currWpId == waypointsArr.Length - 1)

@@ -75,8 +75,19 @@ public class Chapter2Controller : MonoBehaviour
         {
             audioInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter2_2");
             StartCoroutine(waitSecondsAndPlayEvent(8, audioInstance));
-
+            coroutineRunning= true;
             stage++;
+        }
+        if(stage == 4 && !coroutineRunning)
+        {
+            FMOD.Studio.PLAYBACK_STATE state;
+            audioInstance.getPlaybackState(out state);
+            //melody stopped thinking and about to play flute
+            if (state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
+            {
+                SceneLoadClass.SceneToLoad = 1;
+                ScreenFader.Instance.FadeTo(1);
+            }
         }
         
         
@@ -85,7 +96,6 @@ public class Chapter2Controller : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         RuntimeManager.PlayOneShot(path);
-        coroutineRunning= false;
     }
     IEnumerator waitSecondsAndPlayEvent(int seconds, FMOD.Studio.EventInstance audioEvent)
     {
