@@ -44,6 +44,7 @@ public class Controller : MonoBehaviour
         }
         else // return Scene to previous state
         {
+            yield return new WaitForSeconds(2);
             //ScreenFader.Instance.FadeBack();
             switch (SceneLoadClass.SceneBackFrom)
             {

@@ -7450,7 +7450,6 @@ MonoBehaviour:
   StartPage: 13
   EndPage: 17
   bookObj: {fileID: 2122995309}
-  InteractionSceneID: 0
 --- !u!114 &110555364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7495,6 +7494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1789c311662ec404db091cb1b484b90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bookObj: {fileID: 2122995309}
 --- !u!4 &113382167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 609f1d73c67671c488829d87d286ce92, type: 3}
