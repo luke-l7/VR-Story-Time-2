@@ -7,7 +7,6 @@ public class Scene5 : MonoBehaviour
     public int StartPage;
     public int EndPage;
     public GameObject bookObj;
-    public int InteractionSceneID;
     private BookBehavior BookBehaviorObj;
     private Animator bookAnim;
 
@@ -25,9 +24,8 @@ public class Scene5 : MonoBehaviour
         // check whether RequestedPlay in BookBehavior is false, if yes then move scene
         if (!BookBehaviorObj.RequestedPlay) // means s             cene is finished playing
         {
-            bookAnim.SetBool("enterScene", true);
-            AudioManager.Instance.StopMainMusic();
-            ScreenFader.Instance.FadeTo(InteractionSceneID);
+            GetComponent<FinalScene>().enabled = true;
+            this.enabled = false;
         }
     }
 }

@@ -7341,6 +7341,7 @@ GameObject:
   - component: {fileID: 110555365}
   - component: {fileID: 110555364}
   - component: {fileID: 110555363}
+  - component: {fileID: 110555366}
   m_Layer: 0
   m_Name: StoryController
   m_TagString: Untagged
@@ -7449,7 +7450,7 @@ MonoBehaviour:
   StartPage: 13
   EndPage: 17
   bookObj: {fileID: 2122995309}
-  InteractionSceneID: 5
+  InteractionSceneID: 0
 --- !u!114 &110555364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7482,6 +7483,18 @@ MonoBehaviour:
   EndPage: 10
   bookObj: {fileID: 2122995309}
   InteractionSceneID: 3
+--- !u!114 &110555366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110555357}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1789c311662ec404db091cb1b484b90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &113382167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 609f1d73c67671c488829d87d286ce92, type: 3}
@@ -55894,8 +55907,8 @@ MonoBehaviour:
   - material: {fileID: 2100000, guid: b34b361be0a14b941a77cefc12149839, type: 2}
   - material: {fileID: 2100000, guid: a7a15301a7d09964e9b41c4cc2854a69, type: 2}
   - material: {fileID: 2100000, guid: 51d7a32174f8ce24c890954502ed85fc, type: 2}
-  - material: {fileID: 2100000, guid: bfe66ec559c0105449bfd8f701b1e1bc, type: 2}
   - material: {fileID: 2100000, guid: 4097c4266a1de304fbaf4ba11e6801e1, type: 2}
+  - material: {fileID: 2100000, guid: bee1e7548529ee94a829901cce309053, type: 2}
   pages:
   - {fileID: 554740248}
   - {fileID: 360634493}

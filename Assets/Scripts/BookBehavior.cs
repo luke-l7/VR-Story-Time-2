@@ -97,5 +97,10 @@ public class BookBehavior : MonoBehaviour
     {
         bookAnim.SetBool("startScene", true);
     }
+
+    public void closeBook()
+    {
+        GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.ClosedBack, 5f);
+    }
 }
 
