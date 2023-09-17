@@ -11,9 +11,6 @@ public class Scene1 : MonoBehaviour
     private BookBehavior BookBehaviorObj;
     private Animator bookAnim;
 
-
-    // narrator voice events
-    string[] events_sequence;
     void Start()
     {
         bookAnim = bookObj.GetComponent<Animator>();
@@ -29,7 +26,7 @@ public class Scene1 : MonoBehaviour
         {
             bookAnim.SetBool("enterScene", true);
             AudioManager.Instance.StopMainMusic();
-            ScreenFader.Instance.FadeTo(3);
+            ScreenFader.Instance.FadeTo(1);
         }
     }
 }

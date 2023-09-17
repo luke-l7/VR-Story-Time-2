@@ -71,7 +71,7 @@ public class Chapter3Controller : MonoBehaviour
         //fade back to bedroom
         if(stage == 3)
         {
-            SceneLoadClass.SceneToLoad = 1;
+            SceneLoadClass.SceneBackFrom = 3;
             ScreenFader.Instance.FadeTo(1);
         }
     }

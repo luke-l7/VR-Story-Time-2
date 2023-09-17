@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GenderSelectionScene.unity
     guid: f7966cd1a5deb32479dd5f360cc5a513
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Kid_Room.unity
     guid: 8b5552c3a23715a41a7ef58b2dc347c2
   - enabled: 0
@@ -17,6 +17,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene1.unity
     guid: c8180b3967640bb43b8496ee20f4b66e
+  - enabled: 1
+    path: Assets/Scenes/Scene2.unity
+    guid: 16b1e2e209e4f0048a79d2f8740d2c27
+  - enabled: 1
+    path: Assets/Scenes/Scene3.unity
+    guid: 5bb034a46d61990418450b92393b8039
+  - enabled: 1
+    path: Assets/Scenes/Scene4.unity
+    guid: 5adf2f37d648a5a4b8b4a6eb4ecbf004
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 118ffb4441b774249a0a05cb8e84bb68, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 5c919e0a7a2846a4491af57da9070cb0, type: 2}

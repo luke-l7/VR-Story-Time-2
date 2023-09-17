@@ -37,7 +37,7 @@ public class BookBehavior : MonoBehaviour
         RequestedPlay = false;
         runesParticleSystem.Stop();
 
-        if(SceneLoadClass.SceneToLoad != 0) // if back from scene
+        if(SceneLoadClass.SceneBackFrom != 0) // if back from scene
         {
             GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenMiddle, 0f);
             bookAnim.SetBool("backFromScene", true);

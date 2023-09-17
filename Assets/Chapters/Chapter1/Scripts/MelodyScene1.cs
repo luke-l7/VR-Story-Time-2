@@ -179,8 +179,8 @@ public class MelodyScene1 : MonoBehaviour
 
         yield return new WaitForSeconds(seconds);
         coroutineRunning = false;
-        SceneLoadClass.SceneToLoad = 1;
-        ScreenFader.Instance.FadeTo(1);
+        SceneLoadClass.SceneBackFrom = 1;
+        ScreenFader.Instance.FadeTo(0);
 
     }
     IEnumerator waitSecondsAndShowFlute(int seconds)

@@ -26,7 +26,7 @@ public class RoomTeddy : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        if (SceneLoadClass.SceneToLoad != 0) // if back from scene
+        if (SceneLoadClass.SceneBackFrom != 0) // if back from scene
         {
             StandUp();
             CheerSpeech();

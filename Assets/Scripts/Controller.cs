@@ -36,7 +36,7 @@ public class Controller : MonoBehaviour
         cameraBehavior = cameraObj.GetComponent<BloomEffect>();
         timeController = skybox.GetComponent<AzureTimeController>();
         bookAnim = book.GetComponent<Animator>();
-        if (SceneLoadClass.SceneToLoad == 0)
+        if (SceneLoadClass.SceneBackFrom == 0) // start of story
         {
             time_passed = 0.0f;
             // activate teddy stand up and book interaction after NO_OF_SECONDS - see ActivateTeddyInteraction function below.
@@ -45,12 +45,12 @@ public class Controller : MonoBehaviour
         else // return Scene to previous state
         {
             //ScreenFader.Instance.FadeBack();
-            switch (SceneLoadClass.SceneToLoad)
+            switch (SceneLoadClass.SceneBackFrom)
             {
                 case 1: GetComponent<Scene2>().enabled = true; break; // back from scene1, activate scene2
-                //case 2: GetComponent<Scene3>().enabled = true; break;
-                //case 3: GetComponent<Scene4>().enabled = true; break;
-                //case 4: GetComponent<Scene5>().enabled = true; break;
+                case 2: GetComponent<Scene3>().enabled = true; break;
+                case 3: GetComponent<Scene4>().enabled = true; break;
+                case 4: GetComponent<Scene5>().enabled = true; break;
             }
         }
 
@@ -127,7 +127,7 @@ public class Controller : MonoBehaviour
 
         bookBehavior.ActivateSceneAnimation();
         AudioManager.Instance.StopMainMusic();
-        SceneLoadClass.SceneToLoad = 0; // reset scene so Fader properies dont change
+        SceneLoadClass.SceneBackFrom = 0; // reset scene so Fader properies dont change
         ScreenFader.Instance.FadeTo(3);
     }
 }

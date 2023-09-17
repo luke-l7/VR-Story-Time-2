@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.0048126904, g: 0.026118048, b: 0.08460347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7338,6 +7338,9 @@ GameObject:
   - component: {fileID: 110555361}
   - component: {fileID: 110555360}
   - component: {fileID: 110555362}
+  - component: {fileID: 110555365}
+  - component: {fileID: 110555364}
+  - component: {fileID: 110555363}
   m_Layer: 0
   m_Name: StoryController
   m_TagString: Untagged
@@ -7424,6 +7427,45 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e149ff01b98021d4aa6f4b81299f2782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartPage: 0
+  EndPage: 0
+  bookObj: {fileID: 0}
+--- !u!114 &110555363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110555357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3302b6233b35a1469329465c372878d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &110555364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110555357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ecb9ef676160546b607c6b3736cca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &110555365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110555357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770d6619db33d6c4c8372d3c7d84a1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &113382167 stripped
@@ -55828,14 +55870,18 @@ MonoBehaviour:
   - material: {fileID: 2100000, guid: 0cf4bdfa4f674a145948ac5b284571fd, type: 2}
   - material: {fileID: 2100000, guid: c148d9e37a8138f4a83f28d951d9f6e3, type: 2}
   - material: {fileID: 2100000, guid: 27e3e47034c8aad489551afaa68b280a, type: 2}
+  - material: {fileID: 2100000, guid: 40fc62c817f553447aa44111670b341e, type: 2}
   - material: {fileID: 2100000, guid: 8ba9ab1e4467ff4438c8e72130465ac0, type: 2}
   - material: {fileID: 2100000, guid: a2d3200a8cc28d5479f579a343d6a6f3, type: 2}
+  - material: {fileID: 2100000, guid: bee1e7548529ee94a829901cce309053, type: 2}
+  - material: {fileID: 2100000, guid: 3531ca608eed2ac419e58cea70322c0f, type: 2}
   - material: {fileID: 2100000, guid: 20b73993977d3784c8ef1835ff0c2262, type: 2}
+  - material: {fileID: 2100000, guid: 188011a2443880d44864408fd943c65e, type: 2}
   - material: {fileID: 2100000, guid: b34b361be0a14b941a77cefc12149839, type: 2}
   - material: {fileID: 2100000, guid: a7a15301a7d09964e9b41c4cc2854a69, type: 2}
   - material: {fileID: 2100000, guid: 51d7a32174f8ce24c890954502ed85fc, type: 2}
   - material: {fileID: 2100000, guid: bfe66ec559c0105449bfd8f701b1e1bc, type: 2}
-  - material: {fileID: 2100000, guid: 801e86e0bc7434249a849394318d403d, type: 2}
+  - material: {fileID: 2100000, guid: 4097c4266a1de304fbaf4ba11e6801e1, type: 2}
   pages:
   - {fileID: 554740248}
   - {fileID: 360634493}

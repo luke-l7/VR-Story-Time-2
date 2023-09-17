@@ -26,7 +26,7 @@ public class ScreenFader : MonoBehaviour
     void Start()
     {
         rend = GetComponent<Renderer>();
-        if (SceneLoadClass.SceneToLoad != 0) // if back from scene
+        if (SceneLoadClass.SceneBackFrom != 0) // if back from interaction scene
         {
             FadeBack();
         }
