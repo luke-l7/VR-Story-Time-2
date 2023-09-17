@@ -44,15 +44,7 @@ public class Controller : MonoBehaviour
         }
         else // return Scene to previous state
         {
-            yield return new WaitForSeconds(2);
-            //ScreenFader.Instance.FadeBack();
-            switch (SceneLoadClass.SceneBackFrom)
-            {
-                case 1: GetComponent<Scene2>().enabled = true; break; // back from scene1, activate scene2
-                case 2: GetComponent<Scene3>().enabled = true; break;
-                case 3: GetComponent<Scene4>().enabled = true; break;
-                case 4: GetComponent<Scene5>().enabled = true; break;
-            }
+            Invoke("activateSceneScriptInDelay", 2);
         }
 
 
@@ -130,5 +122,17 @@ public class Controller : MonoBehaviour
         AudioManager.Instance.StopMainMusic();
         SceneLoadClass.SceneBackFrom = 0; // reset scene so Fader properies dont change
         ScreenFader.Instance.FadeTo(3);
+    }
+
+    private void activateSceneScriptInDelay()
+    {
+        switch (SceneLoadClass.SceneBackFrom)
+        {
+            case 1: GetComponent<Scene2>().enabled = true; break; // back from scene1, activate scene2
+            case 2: GetComponent<Scene3>().enabled = true; break;
+            case 3: GetComponent<Scene4>().enabled = true; break;
+            case 4: GetComponent<Scene5>().enabled = true; break;
+        }
+        this.enabled = false;
     }
 }
