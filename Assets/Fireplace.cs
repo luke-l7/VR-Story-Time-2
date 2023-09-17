@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class Fireplace : MonoBehaviour
 {
-    public bool LightFire;
+    public bool lightFire = false;
     public GameObject Fire;
 
 
     // Update is called once per frame
     void Update()
     {
-        if (!LightFire)
+        if (!lightFire)
         {
             Fire.SetActive(false);
 
@@ -22,5 +22,9 @@ public class Fireplace : MonoBehaviour
             Fire.SetActive(true);
 
         }
+    }
+    public void ToggleFire()
+    {
+        Fire.SetActive(lightFire);
     }
 }

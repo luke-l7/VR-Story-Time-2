@@ -5,21 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GenderSelectionScene.unity
     guid: f7966cd1a5deb32479dd5f360cc5a513
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Kid_Room.unity
     guid: 8b5552c3a23715a41a7ef58b2dc347c2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Girl_Room.unity
     guid: 2914c06397dfb0d40b731f7d0f655120
   - enabled: 1
     path: Assets/Scenes/Scene1.unity
     guid: c8180b3967640bb43b8496ee20f4b66e
-  - enabled: 1
-    path: Assets/Scenes/Chapter1.unity
-    guid: d1a4dd4580c2e1847afdbe46c829792f
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 118ffb4441b774249a0a05cb8e84bb68, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 5c919e0a7a2846a4491af57da9070cb0, type: 2}
