@@ -7394,9 +7394,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b535b3143b32b4f9925a9523482333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPage: 3
+  StartPage: 1
   EndPage: 4
   bookObj: {fileID: 2122995309}
+  InteractionSceneID: 1
 --- !u!114 &110555361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7424,14 +7425,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110555357}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e149ff01b98021d4aa6f4b81299f2782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPage: 0
-  EndPage: 0
-  bookObj: {fileID: 0}
+  StartPage: 5
+  EndPage: 6
+  bookObj: {fileID: 2122995309}
+  InteractionSceneID: 2
 --- !u!114 &110555363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7439,11 +7441,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110555357}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3302b6233b35a1469329465c372878d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartPage: 13
+  EndPage: 17
+  bookObj: {fileID: 2122995309}
+  InteractionSceneID: 5
 --- !u!114 &110555364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7451,11 +7457,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110555357}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23ecb9ef676160546b607c6b3736cca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartPage: 11
+  EndPage: 12
+  bookObj: {fileID: 2122995309}
+  InteractionSceneID: 4
 --- !u!114 &110555365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7463,11 +7473,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110555357}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 770d6619db33d6c4c8372d3c7d84a1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartPage: 7
+  EndPage: 10
+  bookObj: {fileID: 2122995309}
+  InteractionSceneID: 3
 --- !u!4 &113382167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 609f1d73c67671c488829d87d286ce92, type: 3}

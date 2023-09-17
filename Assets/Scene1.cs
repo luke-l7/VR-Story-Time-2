@@ -8,6 +8,7 @@ public class Scene1 : MonoBehaviour
     public int StartPage;
     public int EndPage;
     public GameObject bookObj;
+    public int InteractionSceneID;
     private BookBehavior BookBehaviorObj;
     private Animator bookAnim;
 
@@ -26,7 +27,7 @@ public class Scene1 : MonoBehaviour
         {
             bookAnim.SetBool("enterScene", true);
             AudioManager.Instance.StopMainMusic();
-            ScreenFader.Instance.FadeTo(1);
+            ScreenFader.Instance.FadeTo(InteractionSceneID);
         }
     }
 }
