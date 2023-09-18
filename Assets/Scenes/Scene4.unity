@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0009450867, g: 0.014311688, b: 0.04956966, a: 1}
+  m_IndirectSpecularColor: {r: 0.27871993, g: 0.38490936, b: 0.48954025, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1402,6 +1402,11 @@ PrefabInstance:
 --- !u!4 &936009950 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3153981397584021003, guid: a018c525185989b46ada854aa7e84079, type: 3}
+  m_PrefabInstance: {fileID: 936009949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &936009951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3740411382959239034, guid: a018c525185989b46ada854aa7e84079, type: 3}
   m_PrefabInstance: {fileID: 936009949}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1027263499
@@ -4676,6 +4681,7 @@ MonoBehaviour:
   parrot: {fileID: 297808713}
   turtle: {fileID: 2113359738}
   owl: {fileID: 1506290133}
+  fluteObj: {fileID: 936009951}
 --- !u!4 &1461800701
 Transform:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class Chapter3Controller : MonoBehaviour
     public GameObject parrot;
     public GameObject turtle;
     public GameObject owl;
+    public GameObject fluteObj;
 
     private FMOD.Studio.EventInstance dialogueInstance;
     private FMOD.Studio.EventInstance ambienceInstance;
@@ -25,6 +26,7 @@ public class Chapter3Controller : MonoBehaviour
     {
         ambienceInstance = FMODUnity.RuntimeManager.CreateInstance("event:/night with hooting");
         ambienceInstance.start();
+        fluteObj.GetComponent<FluteInteractor>().SongNumber = 3;
     }
 
     // Update is called once per frame

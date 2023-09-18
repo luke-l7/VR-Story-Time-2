@@ -17,6 +17,11 @@ public class Chapter2Controller : MonoBehaviour
     bool coroutineRunning = false;
     bool oneTimeCoroutine = false;
 
+    void Start()
+    {
+        fluteObj.GetComponent<FluteInteractor>().SongNumber = 2;
+    }
+
     int stage = 0;
     enum GameState
     {
