@@ -49,5 +49,12 @@ public class Parrot : MonoBehaviour
 
         animator.SetBool("shouldHop", true);
     }
-    
+    public void GoToFlute()
+    {
+        Debug.Log("GoToFlute");
+        parrotSound.setPaused(false);
+
+        animator.SetBool("ShouldGoToFlute", true);
+    }
+
 }

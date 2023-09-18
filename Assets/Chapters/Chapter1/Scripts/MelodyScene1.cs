@@ -26,6 +26,7 @@ public class MelodyScene1 : MonoBehaviour
     private string ch1_4_path = "event:/ch1_4";
     private string ch1_5_path = "event:/ch1-5";
     private FMOD.Studio.EventInstance fmod_instance;
+    private Animator GoToFluteAnimator;
 
     List<string> paths;
 
@@ -55,6 +56,7 @@ public class MelodyScene1 : MonoBehaviour
 
     void Start()
     {
+        GoToFluteAnimator = GetComponent<Animator>();
         audioManager = Ch1AudioManager.Instance;
         waypointsArr = new Transform[waypoints.transform.childCount];
         for (int i = 0; i < waypoints.transform.childCount; i++)
@@ -158,6 +160,13 @@ public class MelodyScene1 : MonoBehaviour
         coroutineRunning = false;
         Parrot.Instance.HopHouseToHouse();
     }
+    IEnumerator waitSecondsAndGoToFlute(int seconds)
+    {
+
+        yield return new WaitForSeconds(seconds);
+        coroutineRunning = false;
+        Parrot.Instance.GoToFlute();
+    }
     IEnumerator waitSecondsAndRaiseFlute(int seconds)
     {
 
@@ -188,6 +197,7 @@ public class MelodyScene1 : MonoBehaviour
 
         yield return new WaitForSeconds(seconds);
         audioManager.PlayOneTimeSound("event:/before_flute_interact");
+        StartCoroutine(waitSecondsAndGoToFlute(2));
         fluteObj.SetActive(true);
         coroutineRunning = false;
 
