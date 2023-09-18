@@ -14,6 +14,9 @@ public class FluteInteractor : MonoBehaviour
     public int SongNumber;
 
     string[] song1 = { "do", "do", "so", "so", "la", "la", "so" , "fa", "fa", "mi", "mi", "re", "re", "do" };
+    string[] song2 = { "mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
+    string[] song3 = {,"re", "re", "mi", "do", "re", "mi", "fa", "re", "do", "re", "mi", "fa", "mi", "re", "do", "re",
+            ,"mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
     int curr_note;
 
     // Start is called before the first frame update
@@ -62,8 +65,11 @@ public class FluteInteractor : MonoBehaviour
         {
             case 1:
                 return song1;
+            case 2:
+                return song2;
+            default:
+                return song3;
         }
-        return song1;
     }
 
     public void advance()
