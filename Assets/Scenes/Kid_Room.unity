@@ -19690,8 +19690,8 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 12a6cbdd77c2f9142aca65e397c68bca, type: 2}
-  - {fileID: 2100000, guid: 54458f1f22916fc4ebc32cff9d04f1e1, type: 2}
-  - {fileID: 2100000, guid: 1bf96e05ec307ce439fb8f29156480b2, type: 2}
+  - {fileID: 2100000, guid: 994cb9cc3369e7046a93b91ab44ddfbb, type: 2}
+  - {fileID: 2100000, guid: 4097c4266a1de304fbaf4ba11e6801e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -44146,6 +44146,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5c45f4ec7fbed644b915df553943b947, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5c45f4ec7fbed644b915df553943b947, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -45413,8 +45417,8 @@ SkinnedMeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 12a6cbdd77c2f9142aca65e397c68bca, type: 2}
   - {fileID: 2100000, guid: 203443d95a43b144b9ad9bc9eae6079a, type: 2}
-  - {fileID: 2100000, guid: 54458f1f22916fc4ebc32cff9d04f1e1, type: 2}
-  - {fileID: 2100000, guid: 1bf96e05ec307ce439fb8f29156480b2, type: 2}
+  - {fileID: 2100000, guid: 994cb9cc3369e7046a93b91ab44ddfbb, type: 2}
+  - {fileID: 2100000, guid: 4097c4266a1de304fbaf4ba11e6801e1, type: 2}
   - {fileID: 2100000, guid: cd678c2baf31bac4496edecf2be0b628, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -55815,8 +55819,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 12a6cbdd77c2f9142aca65e397c68bca, type: 2}
   - {fileID: 2100000, guid: 203443d95a43b144b9ad9bc9eae6079a, type: 2}
   - {fileID: 2100000, guid: cd678c2baf31bac4496edecf2be0b628, type: 2}
-  - {fileID: 2100000, guid: 1bf96e05ec307ce439fb8f29156480b2, type: 2}
-  - {fileID: 2100000, guid: 54458f1f22916fc4ebc32cff9d04f1e1, type: 2}
+  - {fileID: 2100000, guid: 4097c4266a1de304fbaf4ba11e6801e1, type: 2}
+  - {fileID: 2100000, guid: 994cb9cc3369e7046a93b91ab44ddfbb, type: 2}
   materialMappings:
   - materialType: 0
     mappings:
@@ -55904,18 +55908,18 @@ MonoBehaviour:
   - material: {fileID: 2100000, guid: 3531ca608eed2ac419e58cea70322c0f, type: 2}
   - material: {fileID: 2100000, guid: 20b73993977d3784c8ef1835ff0c2262, type: 2}
   - material: {fileID: 2100000, guid: 188011a2443880d44864408fd943c65e, type: 2}
-  - material: {fileID: 2100000, guid: b34b361be0a14b941a77cefc12149839, type: 2}
+  - material: {fileID: 2100000, guid: f412c5a13e3a4ae458c793569bb886bc, type: 2}
   - material: {fileID: 2100000, guid: a7a15301a7d09964e9b41c4cc2854a69, type: 2}
   - material: {fileID: 2100000, guid: 51d7a32174f8ce24c890954502ed85fc, type: 2}
-  - material: {fileID: 2100000, guid: 4097c4266a1de304fbaf4ba11e6801e1, type: 2}
   - material: {fileID: 2100000, guid: bee1e7548529ee94a829901cce309053, type: 2}
+  - material: {fileID: 2100000, guid: 4097c4266a1de304fbaf4ba11e6801e1, type: 2}
   pages:
   - {fileID: 554740248}
   - {fileID: 360634493}
   - {fileID: 9469119}
   - {fileID: 1468136366}
   - {fileID: 1043218422}
-  currentPageNumber: 1
+  currentPageNumber: 17
   maxPagesTurningCount: 4
   deltaTime: 0
   pageFillerMaterial: {fileID: 2100000, guid: 994cb9cc3369e7046a93b91ab44ddfbb, type: 2}

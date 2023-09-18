@@ -63,12 +63,12 @@ public class BookBehavior : MonoBehaviour
             {
                 fmod_instance = FMODUnity.RuntimeManager.CreateInstance("event:/page_" + start.ToString()); // the event corresponding to the page is always names page_ + no of page in FMOD
                 fmod_instance.start();
+                UnityEngine.Debug.Log("event:/page_" + start.ToString());
             }
             catch 
             {
                 UnityEngine.Debug.Log($"audio-less page, start = {start}, end = {end}");
             }
-            start++;
         }
         if (start > end) { RequestedPlay = false; }
     }
