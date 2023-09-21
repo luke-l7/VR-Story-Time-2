@@ -52,7 +52,6 @@ public class Parrot : MonoBehaviour
     public void GoToFlute()
     {
         Debug.Log("GoToFlute");
-        parrotSound.setPaused(false);
 
         animator.SetBool("ShouldGoToFlute", true);
     }
