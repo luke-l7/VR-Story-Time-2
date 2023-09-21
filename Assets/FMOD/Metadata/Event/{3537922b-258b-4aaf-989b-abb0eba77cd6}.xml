@@ -76,7 +76,7 @@
 	</object>
 	<object class="SingleSound" id="{c61705a7-f6f8-44a1-b34b-7dfe714bd4da}">
 		<property name="length">
-			<value>1.5</value>
+			<value>1.0800000000000001</value>
 		</property>
 		<property name="timelockedOffset">
 			<value>75.181381727239199</value>

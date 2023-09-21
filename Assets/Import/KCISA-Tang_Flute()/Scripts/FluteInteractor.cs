@@ -12,11 +12,13 @@ public class FluteInteractor : MonoBehaviour
     public GameObject SoCube;
     public GameObject LaCube;
     public int SongNumber;
+    
 
     string[] song1 = { "do", "do", "so", "so", "la", "la", "so" , "fa", "fa", "mi", "mi", "re", "re", "do" };
     string[] song2 = { "mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
     string[] song3 = {"re", "re", "mi", "do", "re", "mi", "fa", "re", "do", "re", "mi", "fa", "mi", "re", "do", "re" ,"mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
     int curr_note;
+    bool playOver = false; // if finished interaction, this bool will activate to indicate that we should replay it to the player.
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +56,6 @@ public class FluteInteractor : MonoBehaviour
             default:
                 return LaCube;
         }
-
     }
 
     // returns the note array that is required
