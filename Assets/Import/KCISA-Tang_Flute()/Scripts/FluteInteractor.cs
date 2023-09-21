@@ -18,7 +18,10 @@ public class FluteInteractor : MonoBehaviour
     string[] song2 = { "mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
     string[] song3 = {"re", "re", "mi", "do", "re", "mi", "fa", "re", "do", "re", "mi", "fa", "mi", "re", "do", "re" ,"mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
     int curr_note;
+
+    // playover tools
     bool playOver = false; // if finished interaction, this bool will activate to indicate that we should replay it to the player.
+    private FMOD.Studio.EventInstance playover_instance;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +38,21 @@ public class FluteInteractor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        FMOD.Studio.PLAYBACK_STATE state;
+        playover_instance.getPlaybackState(out state);
+        string[] song = returnChosenSong(SongNumber);
+        if (playOver && state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
+        {
+            string event_string = "event:/" + char.ToUpper(song[curr_note][0]) + song[curr_note][1];
+            playover_instance = FMODUnity.RuntimeManager.CreateInstance(event_string);
+            playover_instance.start();
+            curr_note++;
+        }
+        if(curr_note == song.Length)
+        {
+            // FLUTE INTERACTION ENDS HERE - ADD CODE IF NECCESSARY
+            Chapter1Controller.Instance.DonePlayingFlute = true;
+        }
     }
 
     // returns the cube that corresponds to the note
@@ -84,7 +101,9 @@ public class FluteInteractor : MonoBehaviour
         }
         else
         {
-            Chapter1Controller.Instance.DonePlayingFlute = true;
+            curr_note = 0;
+            playOver = true; // if its false, it'll turn true, if true and turned false means we finished playover and flute interaction is done.
+
         }
         // returnCubeNote(song[curr_note]).SetActive(true);
     }
