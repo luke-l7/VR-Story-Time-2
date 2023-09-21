@@ -87,11 +87,10 @@ public class Chapter2Controller : MonoBehaviour
         {
             FMOD.Studio.PLAYBACK_STATE state;
             audioInstance.getPlaybackState(out state);
-            //melody stopped thinking and about to play flute
             if (state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
             {
                 SceneLoadClass.SceneBackFrom = 2;
-                ScreenFader.Instance.FadeTo(1);
+                ScreenFader.Instance.FadeTo(0);
             }
         }
         
