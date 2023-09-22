@@ -13,14 +13,17 @@ public class FluteInteractor : MonoBehaviour
     public GameObject LaCube;
     public int SongNumber;
     
+    
 
     string[] song1 = { "do", "do", "so", "so", "la", "la", "so" , "fa", "fa", "mi", "mi", "re", "re", "do" };
     string[] song2 = { "mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
     string[] song3 = {"re", "re", "mi", "do", "re", "mi", "fa", "re", "do", "re", "mi", "fa", "mi", "re", "do", "re" ,"mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
     int curr_note;
+    
 
     // playover tools
-    bool playOver = false; // if finished interaction, this bool will activate to indicate that we should replay it to the player.
+    public bool playOver = false; // if finished interaction, this bool will activate to indicate that we should replay it to the player.
+    bool playOverAudio = false;
     private FMOD.Studio.EventInstance playover_instance;
 
     // Start is called before the first frame update
@@ -33,6 +36,8 @@ public class FluteInteractor : MonoBehaviour
         // activate the first note -
         string[] song = returnChosenSong(SongNumber);
         returnCubeNote(song[0]).SetActive(true);
+
+        playOverAudio = playOver;
     }
 
     // Update is called once per frame
@@ -43,6 +48,13 @@ public class FluteInteractor : MonoBehaviour
         string[] song = returnChosenSong(SongNumber);
         if (playOver && state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
         {
+            if(playOverAudio)
+            {
+                playover_instance = FMODUnity.RuntimeManager.CreateInstance("event:/goodjob_playback_audio");
+                playover_instance.start();
+                playOverAudio = false;
+                return;
+            }
             string event_string = "event:/" + char.ToUpper(song[curr_note][0]) + song[curr_note][1];
             playover_instance = FMODUnity.RuntimeManager.CreateInstance(event_string);
             playover_instance.start();
@@ -52,6 +64,7 @@ public class FluteInteractor : MonoBehaviour
         {
             // FLUTE INTERACTION ENDS HERE - ADD CODE IF NECCESSARY
             Chapter1Controller.Instance.DonePlayingFlute = true;
+            playOver = false;
         }
     }
 
@@ -103,6 +116,7 @@ public class FluteInteractor : MonoBehaviour
         {
             curr_note = 0;
             playOver = true; // if its false, it'll turn true, if true and turned false means we finished playover and flute interaction is done.
+            playOverAudio = true;
 
         }
         // returnCubeNote(song[curr_note]).SetActive(true);
