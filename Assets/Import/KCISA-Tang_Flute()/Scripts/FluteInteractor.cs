@@ -23,7 +23,7 @@ public class FluteInteractor : MonoBehaviour
 
     // playover tools
     public bool playOver = false; // if finished interaction, this bool will activate to indicate that we should replay it to the player.
-    bool playOverAudio = false;
+    public bool playOverAudio = false;
     private FMOD.Studio.EventInstance playover_instance;
 
     // Start is called before the first frame update
@@ -37,7 +37,6 @@ public class FluteInteractor : MonoBehaviour
         string[] song = returnChosenSong(SongNumber);
         returnCubeNote(song[0]).SetActive(true);
 
-        playOverAudio = playOver;
     }
 
     // Update is called once per frame
@@ -48,14 +47,21 @@ public class FluteInteractor : MonoBehaviour
         string[] song = returnChosenSong(SongNumber);
         if (playOver && state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
         {
+            string event_string;
             if(playOverAudio)
             {
-                playover_instance = FMODUnity.RuntimeManager.CreateInstance("event:/goodjob_playback_audio");
+                switch(SongNumber)
+                {
+                    case 1: event_string = "event:/goodjob_playback_audio"; break;
+                    case 2: event_string = "event:/goodjob_playback_audio2"; break;
+                    default: event_string = "event:/goodjob_playback_audio3"; break;
+                }
+                playover_instance = FMODUnity.RuntimeManager.CreateInstance(event_string);
                 playover_instance.start();
                 playOverAudio = false;
                 return;
             }
-            string event_string = "event:/" + char.ToUpper(song[curr_note][0]) + song[curr_note][1];
+            event_string = "event:/" + char.ToUpper(song[curr_note][0]) + song[curr_note][1];
             playover_instance = FMODUnity.RuntimeManager.CreateInstance(event_string);
             playover_instance.start();
             curr_note++;
