@@ -3266,6 +3266,10 @@ PrefabInstance:
       propertyPath: reference.Guid.Data4
       value: -919657067
       objectReference: {fileID: 0}
+    - target: {fileID: 8060747855579120594, guid: a018c525185989b46ada854aa7e84079, type: 3}
+      propertyPath: SongNumber
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -9,7 +9,7 @@ public class ForestBook : MonoBehaviour
 {
     public Transform bookLocations;
     public Transform[] bookLocationsArr;
-
+    public FluteInteractor flute;
     public bool trigger1; //for debug purposes- serve as triggers that replace player hands pointing at book
     public bool trigger2;
     public bool trigger3;
@@ -45,8 +45,6 @@ public class ForestBook : MonoBehaviour
         {
             transform.position = bookLocationsArr[1].position;
             RuntimeManager.PlayOneShot("event:/Chapter4_2");
-
-
             stage++;
         }
         //player finds it a third time
@@ -54,6 +52,7 @@ public class ForestBook : MonoBehaviour
         {
             //initiate book animation and advance story
             animator.enabled = true;
+            MelodyScene4.Instance.LookAtBook();
             narratorInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter4_3");
             narratorInstance.start();
             StartCoroutine(waitSecondsAndOpen(14));
@@ -64,10 +63,16 @@ public class ForestBook : MonoBehaviour
         {
             //animation stopped, open book and play sound
             //Lumiere flew to melody and opened its pages, revealing a musical score that could bring joy to the world. "Play this Melody, and watch the surprising transformation," Lumiere whispered as it opened.
-            GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenMiddle, 0f);
-
+            GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenMiddle, 1f);
+            flute.gameObject.SetActive(true);
+            stage++;
         }
-
+        else if(stage==4 && flute.donePlayingFlute == true)
+        {
+            narratorInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter4_4");
+            narratorInstance.start();
+            stage++;
+        }
     }
     public void TriggerBookTranslation()
     {
@@ -87,9 +92,7 @@ public class ForestBook : MonoBehaviour
 
     IEnumerator waitSecondsAndOpen(int seconds)
     {
-
         yield return new WaitForSeconds(seconds);
         coroutineRunning = false;
-
     }
 }

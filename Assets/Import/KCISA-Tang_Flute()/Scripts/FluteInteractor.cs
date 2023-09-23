@@ -26,6 +26,7 @@ public class FluteInteractor : MonoBehaviour
     public bool playOverAudio = false;
     private FMOD.Studio.EventInstance playover_instance;
 
+    public bool donePlayingFlute= false;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +71,7 @@ public class FluteInteractor : MonoBehaviour
         {
             // FLUTE INTERACTION ENDS HERE - ADD CODE IF NECCESSARY
             Chapter1Controller.Instance.DonePlayingFlute = true;
+            donePlayingFlute = true;
             playOver = false;
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,13 @@ using UnityEngine.AI;
 
 public class MelodyScene4 : MonoBehaviour
 {
-    public GameObject waypoints;
-    public Transform[] waypointsArr;
     public static MelodyScene4 Instance { get; private set; }
+    public GameObject book;
 
     NavMeshAgent agent;
     Animator animator;
 
+    bool lookAtBook = false;
     private void Awake()
     {
         if (Instance == null)
@@ -24,11 +25,6 @@ public class MelodyScene4 : MonoBehaviour
         }
 
         agent = GetComponent<NavMeshAgent>();
-        waypointsArr = new Transform[waypoints.transform.childCount];
-        for (int i = 0; i < waypoints.transform.childCount; i++)
-        {
-            waypointsArr[i] = waypoints.transform.GetChild(i);
-        }
 
     }
     private void Start()
@@ -41,5 +37,18 @@ public class MelodyScene4 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(lookAtBook)
+        {
+            Vector3 direction = book.transform.position - transform.position;
+            direction.y = 0;
+            if (direction != Vector3.zero)
+            {
+                transform.rotation = Quaternion.LookRotation(direction);
+            }
+        }
+    }
+    public void LookAtBook()
+    {
+        lookAtBook= true;
     }
 }
