@@ -80,3 +80,4 @@ fmod_editor.log
 # ignore library
 Library/
 Library/ScriptAssemblies/
+UserSettings/EditorUserSettings.asset
