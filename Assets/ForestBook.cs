@@ -10,9 +10,11 @@ public class ForestBook : MonoBehaviour
     public Transform bookLocations;
     public Transform[] bookLocationsArr;
     public FluteInteractor flute;
+    public Animals Animals;
     public bool trigger1; //for debug purposes- serve as triggers that replace player hands pointing at book
     public bool trigger2;
     public bool trigger3;
+
 
     bool coroutineRunning = false;
     private FMOD.Studio.EventInstance narratorInstance;
@@ -64,6 +66,8 @@ public class ForestBook : MonoBehaviour
             //animation stopped, open book and play sound
             //Lumiere flew to melody and opened its pages, revealing a musical score that could bring joy to the world. "Play this Melody, and watch the surprising transformation," Lumiere whispered as it opened.
             GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenMiddle, 1f);
+            StartCoroutine(waitSecondsAndLetAnimalsOut(4));
+
             flute.gameObject.SetActive(true);
             stage++;
         }
@@ -72,6 +76,18 @@ public class ForestBook : MonoBehaviour
             narratorInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter4_4");
             narratorInstance.start();
             stage++;
+        }
+        if(stage == 5)
+        {
+            FMOD.Studio.PLAYBACK_STATE state;
+            narratorInstance.getPlaybackState(out state);
+            if (state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
+            {
+                //transition back to kid room
+                Debug.Log("fading back to bedroom");
+                SceneLoadClass.SceneBackFrom = 4;
+                ScreenFader.Instance.FadeTo(0);
+            }
         }
     }
     public void TriggerBookTranslation()
@@ -94,5 +110,10 @@ public class ForestBook : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         coroutineRunning = false;
+    }
+    IEnumerator waitSecondsAndLetAnimalsOut(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Animals.LetAnimalsOut();
     }
 }
