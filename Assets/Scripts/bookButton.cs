@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class bookButton : MonoBehaviour
 {
-    public GameObject book;
+    public ForestBook book;
     public Transform player;
-    float weight;
+    public float weight;
     // Start is called before the first frame update
     void Start()
     {
-        weight = 0.91f;
     }
     private void Update()
     {
-        transform.position = Vector3.Lerp(book.transform.position, player.position, weight); ;
+        transform.position = Vector3.Lerp(book.transform.position + new Vector3(0,9,0), player.position, weight); ;
         transform.LookAt(player.position);
+
     }
     public void endLife()
     {
         Destroy(gameObject);
+    }
+    public void TriggerBookTranslation()
+    {
+        book.TriggerBookTranslation();
     }
 }

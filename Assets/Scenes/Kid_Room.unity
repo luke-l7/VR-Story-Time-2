@@ -15839,6 +15839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   book: {fileID: 1746520699}
   player: {fileID: 142113484}
+  weight: 0
 --- !u!114 &325339477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41714,6 +41715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   book: {fileID: 2122995309}
   player: {fileID: 1621049777}
+  weight: 0.91
 --- !u!114 &1621563987
 MonoBehaviour:
   m_ObjectHideFlags: 0

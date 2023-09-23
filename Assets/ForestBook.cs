@@ -28,9 +28,9 @@ public class ForestBook : MonoBehaviour
     void Update()
     {
         //change book location when player points at it 
-        if(stage == 0 && trigger1) 
+        if (stage == 0 && trigger1)
         {
-            transform.position = bookLocationsArr[0].position; 
+            transform.position = bookLocationsArr[0].position;
             stage++;
         }
         //player finds book again, change location 
@@ -40,12 +40,27 @@ public class ForestBook : MonoBehaviour
             stage++;
         }
         //player finds it a third time
-        else if(stage == 2 && trigger3)
+        else if (stage == 2 && trigger3)
         {
             //initiate book animation and advance story
-            animator.enabled= true;
+            animator.enabled = true;
             stage++;
         }
 
+    }
+    public void TriggerBookTranslation()
+    {
+        switch(stage)
+        {
+            case 0:
+                trigger1 = true;
+                break;
+            case 1: 
+                trigger2 = true;
+                break;
+            case 2:
+                trigger3 = true;
+                break;
+        }
     }
 }

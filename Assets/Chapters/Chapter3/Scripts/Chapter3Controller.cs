@@ -11,7 +11,7 @@ public class Chapter3Controller : MonoBehaviour
     public GameObject parrot;
     public GameObject turtle;
     public GameObject owl;
-    public GameObject fluteObj;
+    //public GameObject fluteObj;
 
     private FMOD.Studio.EventInstance dialogueInstance;
     private FMOD.Studio.EventInstance ambienceInstance;
@@ -26,7 +26,7 @@ public class Chapter3Controller : MonoBehaviour
     {
         ambienceInstance = FMODUnity.RuntimeManager.CreateInstance("event:/night with hooting");
         ambienceInstance.start();
-        fluteObj.GetComponent<FluteInteractor>().SongNumber = 3;
+        //fluteObj.GetComponent<FluteInteractor>().SongNumber = 3;
     }
 
     // Update is called once per frame
@@ -74,7 +74,7 @@ public class Chapter3Controller : MonoBehaviour
         if(stage == 3)
         {
             SceneLoadClass.SceneBackFrom = 3;
-            ScreenFader.Instance.FadeTo(1);
+            ScreenFader.Instance.FadeTo(0);
         }
     }
     IEnumerator waitSecondsAndPlayOneShot(int seconds, string path)
