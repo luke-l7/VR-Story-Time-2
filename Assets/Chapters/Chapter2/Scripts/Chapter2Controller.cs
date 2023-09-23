@@ -7,16 +7,28 @@ using UnityEngine.AI;
 
 public class Chapter2Controller : MonoBehaviour
 {
+    public static Chapter2Controller Instance { get; private set; }
     public GameObject melody;
     public GameObject parrot;
     public GameObject turtle;
-    public GameObject fluteObj;
+    public FluteInteractor fluteObj;
     public bool DonePlayingFlute = false;
 
     private FMOD.Studio.EventInstance audioInstance;
     bool coroutineRunning = false;
     bool oneTimeCoroutine = false;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         fluteObj.GetComponent<FluteInteractor>().SongNumber = 2;
@@ -57,7 +69,7 @@ public class Chapter2Controller : MonoBehaviour
             if (!oneTimeCoroutine && state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
             {
                 StartCoroutine(waitSecondsAndPlayOneShot(2, "event:/before_flute_interact"));
-                fluteObj.SetActive(true);
+                fluteObj.gameObject.SetActive(true);
                 oneTimeCoroutine= true;
             }
             //make melody and parrot look at turtle
@@ -68,7 +80,7 @@ public class Chapter2Controller : MonoBehaviour
                 melody.transform.rotation = Quaternion.LookRotation(direction);
                 parrot.transform.rotation = Quaternion.LookRotation(direction);
             }
-            if (DonePlayingFlute)
+            if (fluteObj.donePlayingFlute == true)
             {
                 StartCoroutine(waitSecondsAndPlayOneShot(1, "event:/good_job"));
                 TurtleScene2.Instance.PlayHappyAnimation();

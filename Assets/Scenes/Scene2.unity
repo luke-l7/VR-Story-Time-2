@@ -3312,7 +3312,7 @@ MonoBehaviour:
   melody: {fileID: 159095777}
   parrot: {fileID: 1154122232}
   turtle: {fileID: 1428138366}
-  fluteObj: {fileID: 1481270018}
+  fluteObj: {fileID: 1481270019}
   DonePlayingFlute: 0
 --- !u!4 &1141698220
 Transform:
@@ -6802,11 +6802,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 159095779}
   m_SourcePrefab: {fileID: 100100000, guid: cc41e5236db8fcb43aedc36ff5d90e92, type: 3}
---- !u!1 &1481270018 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3740411382959239034, guid: a018c525185989b46ada854aa7e84079, type: 3}
+--- !u!114 &1481270019 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8060747855579120594, guid: a018c525185989b46ada854aa7e84079, type: 3}
   m_PrefabInstance: {fileID: 1115746733}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65eb5cd51ecf7194a9ab7c12c52ec1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1490757836
 PrefabInstance:
   m_ObjectHideFlags: 0

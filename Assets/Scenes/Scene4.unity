@@ -2103,9 +2103,9 @@ GameObject:
   - component: {fileID: 1087235749}
   - component: {fileID: 1087235748}
   - component: {fileID: 1087235747}
-  - component: {fileID: 1087235746}
   - component: {fileID: 1087235754}
   - component: {fileID: 1087235753}
+  - component: {fileID: 1087235755}
   m_Layer: 0
   m_Name: BookButton (1)
   m_TagString: Untagged
@@ -2113,21 +2113,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1087235746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087235745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deedef3a90837954c936543ccb913ab6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  book: {fileID: 223136903}
-  player: {fileID: 2027002334}
-  weight: 0.9
 --- !u!114 &1087235747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2188,7 +2173,7 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1087235746}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: bookButton, Assembly-CSharp
         m_MethodName: TriggerBookTranslation
         m_Mode: 1
@@ -2270,8 +2255,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.7719517, y: 1.746434, z: 1}
+  m_Center: {x: 0.103961065, y: 0.1550656, z: 0.0000000030124423}
 --- !u!23 &1087235750
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2375,8 +2360,8 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1087235746}
-        m_TargetAssemblyTypeName: bookButton, Assembly-CSharp
+      - m_Target: {fileID: 223136903}
+        m_TargetAssemblyTypeName: ForestBook, Assembly-CSharp
         m_MethodName: TriggerBookTranslation
         m_Mode: 1
         m_Arguments:
@@ -2511,6 +2496,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1087235755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087235745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28793e550aee01a4cb0a335812bb3d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  book: {fileID: 223136903}
+  player: {fileID: 2027002334}
+  weight: 0.9
 --- !u!1001 &1185497361
 PrefabInstance:
   m_ObjectHideFlags: 0
