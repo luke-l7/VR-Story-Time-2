@@ -79,6 +79,9 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{bc95c104-e956-42e2-b7fb-933b67e6af82}">
+		<property name="start">
+			<value>5</value>
+		</property>
 		<property name="length">
 			<value>10.5</value>
 		</property>
@@ -88,7 +91,7 @@
 	</object>
 	<object class="SingleSound" id="{8fb6b60c-2586-4dda-a545-69a4ec38e23f}">
 		<property name="start">
-			<value>14.5</value>
+			<value>19.499999999999982</value>
 		</property>
 		<property name="length">
 			<value>2.5200000000000014</value>
@@ -102,7 +105,7 @@
 	</object>
 	<object class="SingleSound" id="{2a502f4e-67a6-4d0e-b234-97611be2a44e}">
 		<property name="start">
-			<value>10.5</value>
+			<value>15.499999999999982</value>
 		</property>
 		<property name="length">
 			<value>3.3436734693877552</value>

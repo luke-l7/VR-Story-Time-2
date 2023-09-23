@@ -1,5 +1,8 @@
+using echo17.EndlessBook;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class ForestBook : MonoBehaviour
@@ -10,6 +13,9 @@ public class ForestBook : MonoBehaviour
     public bool trigger1; //for debug purposes- serve as triggers that replace player hands pointing at book
     public bool trigger2;
     public bool trigger3;
+
+    bool coroutineRunning = false;
+    private FMOD.Studio.EventInstance narratorInstance;
 
     Animator animator;
     int stage = 0;
@@ -31,12 +37,16 @@ public class ForestBook : MonoBehaviour
         if (stage == 0 && trigger1)
         {
             transform.position = bookLocationsArr[0].position;
+            RuntimeManager.PlayOneShot("event:/Chapter4_2");
             stage++;
         }
         //player finds book again, change location 
         else if (stage == 1 && trigger2)
         {
             transform.position = bookLocationsArr[1].position;
+            RuntimeManager.PlayOneShot("event:/Chapter4_2");
+
+
             stage++;
         }
         //player finds it a third time
@@ -44,7 +54,18 @@ public class ForestBook : MonoBehaviour
         {
             //initiate book animation and advance story
             animator.enabled = true;
+            narratorInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter4_3");
+            narratorInstance.start();
+            StartCoroutine(waitSecondsAndOpen(14));
+            coroutineRunning= true;
             stage++;
+        }
+        else if(stage == 3 && !coroutineRunning)
+        {
+            //animation stopped, open book and play sound
+            //Lumiere flew to melody and opened its pages, revealing a musical score that could bring joy to the world. "Play this Melody, and watch the surprising transformation," Lumiere whispered as it opened.
+            GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenMiddle, 0f);
+
         }
 
     }
@@ -62,5 +83,13 @@ public class ForestBook : MonoBehaviour
                 trigger3 = true;
                 break;
         }
+    }
+
+    IEnumerator waitSecondsAndOpen(int seconds)
+    {
+
+        yield return new WaitForSeconds(seconds);
+        coroutineRunning = false;
+
     }
 }
