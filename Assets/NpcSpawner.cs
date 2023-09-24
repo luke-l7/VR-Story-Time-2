@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class NpcSpawner : MonoBehaviour
 {
+    public static NpcSpawner Instance {get; private set;}
     public GameObject[] NpcPrefabs;
     public Path[] spawnPoints;
 
-    int currSpawned = 0;
+    public int currSpawned = 0;
     System.Random random;
     bool coroutineRunning = false;
 
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         random = new System.Random();
@@ -50,5 +62,9 @@ public class NpcSpawner : MonoBehaviour
             
         }
         coroutineRunning= false;
+    }
+    public void DecrementActiveNpcs()
+    {
+        currSpawned--;
     }
 }

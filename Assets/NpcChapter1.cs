@@ -28,6 +28,7 @@ public class NpcChapter1 : MonoBehaviour
                 //if reached end of path destroy self
                 if(currWpIndex == path.Length-1)
                 {
+                    NpcSpawner.Instance.DecrementActiveNpcs();
                     Destroy(gameObject);
                     this.enabled= false; //for some reason the script is still 
                     active= false;
