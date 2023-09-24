@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0048126904, g: 0.026118048, b: 0.08460347, a: 1}
+  m_IndirectSpecularColor: {r: 0.0003451979, g: 0.0041685854, b: 0.020898245, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -45238,6 +45238,7 @@ MonoBehaviour:
   Player: {fileID: 142113484}
   shouldMove: 0
   runesParticleSystem: {fileID: 0}
+  roomTeddy: {fileID: 0}
   RequestedPlay: 0
 --- !u!111 &1746520706
 Animation:
@@ -55982,6 +55983,7 @@ MonoBehaviour:
   Player: {fileID: 1792568449}
   shouldMove: 0
   runesParticleSystem: {fileID: 87410165}
+  roomTeddy: {fileID: 604853269}
   RequestedPlay: 0
 --- !u!1 &2129722820
 GameObject:
