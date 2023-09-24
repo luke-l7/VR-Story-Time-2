@@ -137,7 +137,7 @@ public class MelodyScene1 : MonoBehaviour
         }
         if (stage == 3 && !coroutineRunning && Chapter1Controller.Instance.DonePlayingFlute)
         {
-            audioManager.PlayOneTimeSound("event:/good_job");
+            //audioManager.PlayOneTimeSound("event:/good_job");
             StartCoroutine(waitSecondsAndPlay(7, ch1_2_path));
             coroutineRunning = true;
             stage++;
