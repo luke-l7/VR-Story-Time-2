@@ -14,10 +14,11 @@ public class ForestBook : MonoBehaviour
     public bool trigger1; //for debug purposes- serve as triggers that replace player hands pointing at book
     public bool trigger2;
     public bool trigger3;
-
+    public GameObject forestLights;
     bool coroutineRunning = false;
     private FMOD.Studio.EventInstance narratorInstance;
     private GameObject bookLight;
+
     Animator animator;
     int stage = 0;
     // Start is called before the first frame update
@@ -67,6 +68,7 @@ public class ForestBook : MonoBehaviour
             //Lumiere flew to melody and opened its pages, revealing a musical score that could bring joy to the world. "Play this Melody, and watch the surprising transformation," Lumiere whispered as it opened.
             GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenMiddle, 1f);
             bookLight.GetComponent<Animator>().SetBool("Glow", true);
+            forestLights.SetActive(true);
             StartCoroutine(waitSecondsAndLetAnimalsOut(6));
 
             flute.gameObject.SetActive(true);
