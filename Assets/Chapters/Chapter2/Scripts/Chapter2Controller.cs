@@ -86,7 +86,7 @@ public class Chapter2Controller : MonoBehaviour
             }
             if (fluteObj.donePlayingFlute == true)
             {
-                StartCoroutine(waitSecondsAndPlayOneShot(1, "event:/good_job"));
+                //StartCoroutine(waitSecondsAndPlayOneShot(1, "event:/good_job"));
                 TurtleScene2.Instance.PlayHappyAnimation();
 
                 stage++;
@@ -95,7 +95,7 @@ public class Chapter2Controller : MonoBehaviour
         else if(stage==3)
         {
             dialogueInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter2_2");
-            StartCoroutine(waitSecondsAndPlayEvent(8, dialogueInstance));
+            StartCoroutine(waitSecondsAndPlayEvent(6, dialogueInstance));
             coroutineRunning= true;
             stage++;
         }
