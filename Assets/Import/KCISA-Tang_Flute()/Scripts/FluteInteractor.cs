@@ -1,5 +1,7 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class FluteInteractor : MonoBehaviour
@@ -17,8 +19,10 @@ public class FluteInteractor : MonoBehaviour
 
     string[] song1 = { "do", "do", "so", "so", "la", "la", "so" , "fa", "fa", "mi", "mi", "re", "re", "do" };
     string[] song2 = { "mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
-    string[] song3 = {"re", "re", "mi", "do", "re", "mi", "fa", "re", "do", "re", "mi", "fa", "mi", "re", "do", "re" ,"mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
-    int curr_note;
+    //string[] song3 = {"re", "re", "mi", "do", "re", "mi", "fa", "re", "do", "re", "mi", "fa", "mi", "re", "do", "re" ,"mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
+    string[] song3 = { "re"};
+
+    public int curr_note;
     
 
     // playover tools
@@ -48,18 +52,38 @@ public class FluteInteractor : MonoBehaviour
         string[] song = returnChosenSong(SongNumber);
         if (playOver && state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
         {
+            //replay code commented for now
+
+            //string event_string;
+            //if(playOverAudio)
+            //{
+            //    switch(SongNumber)
+            //    {
+            //        case 1: event_string = "event:/goodjob_playback_audio"; break;
+            //        case 2: event_string = "event:/goodjob_playback_audio2"; break;
+            //        default: event_string = "event:/goodjob_playback_audio3"; break;
+            //    }
+            //    playover_instance = FMODUnity.RuntimeManager.CreateInstance(event_string);
+            //    playover_instance.start();
+            //    playOverAudio = false;
+            //    return;
+            //}
+            //event_string = "event:/" + char.ToUpper(song[curr_note][0]) + song[curr_note][1];
+            //playover_instance = FMODUnity.RuntimeManager.CreateInstance(event_string);
+            //playover_instance.start();
+
+
             string event_string;
-            if(playOverAudio)
+            if (playOverAudio)
             {
-                switch(SongNumber)
-                {
-                    case 1: event_string = "event:/goodjob_playback_audio"; break;
-                    case 2: event_string = "event:/goodjob_playback_audio2"; break;
-                    default: event_string = "event:/goodjob_playback_audio3"; break;
-                }
-                playover_instance = FMODUnity.RuntimeManager.CreateInstance(event_string);
+
+                playover_instance = FMODUnity.RuntimeManager.CreateInstance("event:/good_job_generic");
                 playover_instance.start();
                 playOverAudio = false;
+                playOver = false;
+                curr_note = song.Length;
+                StartCoroutine(waitSecondsAndSetBool(4));
+
                 return;
             }
             event_string = "event:/" + char.ToUpper(song[curr_note][0]) + song[curr_note][1];
@@ -67,9 +91,12 @@ public class FluteInteractor : MonoBehaviour
             playover_instance.start();
             curr_note++;
         }
-        if(curr_note == song.Length)
+        if(curr_note >= song.Length)
         {
             // FLUTE INTERACTION ENDS HERE - ADD CODE IF NECCESSARY
+
+            
+
             Chapter1Controller.Instance.DonePlayingFlute = true;
             donePlayingFlute = true;
             playOver = false;
@@ -128,6 +155,12 @@ public class FluteInteractor : MonoBehaviour
 
         }
         // returnCubeNote(song[curr_note]).SetActive(true);
+    }
+
+    IEnumerator waitSecondsAndSetBool(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        donePlayingFlute= true;
     }
 }
 

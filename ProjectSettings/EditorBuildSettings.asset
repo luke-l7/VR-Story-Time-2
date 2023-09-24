@@ -11,19 +11,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GenderSelectionScene.unity
     guid: f7966cd1a5deb32479dd5f360cc5a513
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Kid_Room.unity
     guid: 8b5552c3a23715a41a7ef58b2dc347c2
   - enabled: 0
     path: Assets/Scenes/Girl_Room.unity
     guid: 2914c06397dfb0d40b731f7d0f655120
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene1.unity
     guid: c8180b3967640bb43b8496ee20f4b66e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene2_1.unity
     guid: 912c5fb6edbdc6a4b9520bf3a8cf26c5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene3.unity
     guid: 5bb034a46d61990418450b92393b8039
   - enabled: 1

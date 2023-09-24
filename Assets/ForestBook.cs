@@ -67,8 +67,7 @@ public class ForestBook : MonoBehaviour
             //animation stopped, open book and play sound
             //Lumiere flew to melody and opened its pages, revealing a musical score that could bring joy to the world. "Play this Melody, and watch the surprising transformation," Lumiere whispered as it opened.
             GetComponent<EndlessBook>().SetState(EndlessBook.StateEnum.OpenMiddle, 1f);
-            bookLight.GetComponent<Animator>().SetBool("Glow", true);
-            forestLights.SetActive(true);
+
             StartCoroutine(waitSecondsAndLetAnimalsOut(6));
 
             flute.gameObject.SetActive(true);
@@ -76,6 +75,8 @@ public class ForestBook : MonoBehaviour
         }
         else if(stage==4 && flute.donePlayingFlute == true)
         {
+            bookLight.GetComponent<Animator>().SetBool("Glow", true);
+            forestLights.SetActive(true);
             narratorInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter4_4");
             narratorInstance.start();
             stage++;
