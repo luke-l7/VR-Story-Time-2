@@ -14,7 +14,9 @@ public class Chapter2Controller : MonoBehaviour
     public FluteInteractor fluteObj;
     public bool DonePlayingFlute = false;
 
-    private FMOD.Studio.EventInstance audioInstance;
+    private FMOD.Studio.EventInstance dialogueInstance;
+    private FMOD.Studio.EventInstance ambienceInstance;
+
     bool coroutineRunning = false;
     bool oneTimeCoroutine = false;
 
@@ -32,6 +34,8 @@ public class Chapter2Controller : MonoBehaviour
     void Start()
     {
         fluteObj.GetComponent<FluteInteractor>().SongNumber = 2;
+        ambienceInstance = FMODUnity.RuntimeManager.CreateInstance("event:/scene2 background");
+        ambienceInstance.start();
     }
 
     int stage = 0;
@@ -56,15 +60,15 @@ public class Chapter2Controller : MonoBehaviour
         else if (stage == 1 && currState == GameState.TurtleConvo ) 
         {
             melody.GetComponent<MelodyScene2>().stopWalking();
-            audioInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter2_1");
-            audioInstance.start();
+            dialogueInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter2_1");
+            dialogueInstance.start();
             stage++;
         }
         
         else if(stage == 2)
         {
             FMOD.Studio.PLAYBACK_STATE state;
-            audioInstance.getPlaybackState(out state);
+            dialogueInstance.getPlaybackState(out state);
             //melody stopped thinking and about to play flute
             if (!oneTimeCoroutine && state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
             {
@@ -90,15 +94,15 @@ public class Chapter2Controller : MonoBehaviour
         }
         else if(stage==3)
         {
-            audioInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter2_2");
-            StartCoroutine(waitSecondsAndPlayEvent(8, audioInstance));
+            dialogueInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter2_2");
+            StartCoroutine(waitSecondsAndPlayEvent(8, dialogueInstance));
             coroutineRunning= true;
             stage++;
         }
         if(stage == 4 && !coroutineRunning)
         {
             FMOD.Studio.PLAYBACK_STATE state;
-            audioInstance.getPlaybackState(out state);
+            dialogueInstance.getPlaybackState(out state);
             if (state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
             {
                 SceneLoadClass.SceneBackFrom = 2;
