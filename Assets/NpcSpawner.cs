@@ -48,7 +48,6 @@ public class NpcSpawner : MonoBehaviour
             spawned = true;
             //randomize model
             int residentIndex = random.Next(0, NpcPrefabs.Length);
-            Debug.Log(residentIndex);
             //randomize spawn location
             int spawnPoint =random.Next(0, spawnPoints.Length);
 

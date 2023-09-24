@@ -6,6 +6,8 @@ using UnityEngine;
 public class Ch1AudioManager : MonoBehaviour
 {
     public static Ch1AudioManager Instance { get; private set; }
+    private FMOD.Studio.EventInstance ambienceInstance;
+
 
     private void Awake()
     {
@@ -21,10 +23,18 @@ public class Ch1AudioManager : MonoBehaviour
 
     }
 
-
-
+    private void Start()
+    {
+        ambienceInstance = FMODUnity.RuntimeManager.CreateInstance("event:/scene1 background");
+        ambienceInstance.start();
+    }
+     
     public void PlayOneTimeSound(string path)
     {
         RuntimeManager.PlayOneShot(path);
+    }
+    private void OnDestroy()
+    {
+        ambienceInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 }

@@ -19,7 +19,6 @@ public class Chapter1Controller : MonoBehaviour
     string donkey1 = "no pineapples here";
     public  bool DonePlayingFlute = false;
 
-    private FMOD.Studio.EventInstance ambienceInstance;
     
 
     public static Chapter1Controller Instance { get; private set; }
@@ -44,8 +43,7 @@ public class Chapter1Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ambienceInstance = FMODUnity.RuntimeManager.CreateInstance("event:/scene1 background");
-        ambienceInstance.start();
+
     }
 
     // Update is called once per frame
