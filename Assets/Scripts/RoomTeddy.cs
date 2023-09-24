@@ -62,4 +62,8 @@ public class RoomTeddy : MonoBehaviour
             popupSystem.ShowPopUp(bookCheer);
         }
     }
+    public void Dance()
+    {
+        animator.SetTrigger("Dance");
+    }
 }

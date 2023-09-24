@@ -13,7 +13,7 @@ public class BookBehavior : MonoBehaviour
     private Animator bookAnim;
     private AudioManager audioManager;
     public ParticleSystem runesParticleSystem;
-
+    public RoomTeddy roomTeddy;
 
     // play pages params
     private FMOD.Studio.EventInstance fmod_instance;
@@ -78,6 +78,7 @@ public class BookBehavior : MonoBehaviour
     public void moveBook()
     {
         bookAnim.SetBool("shouldHover", true);
+        roomTeddy.Dance();
         audioManager.ActivateBookSound();
         runesParticleSystem.Stop();
     }
