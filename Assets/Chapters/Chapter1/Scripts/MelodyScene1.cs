@@ -67,7 +67,7 @@ public class MelodyScene1 : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetBool("Walk", true);
         agent = GetComponent<NavMeshAgent>();
-        storyCanvas = StoryCanvas.Instance;
+        //storyCanvas = StoryCanvas.Instance;
         approachParrot();
     }
 
@@ -138,7 +138,7 @@ public class MelodyScene1 : MonoBehaviour
         if (stage == 3 && !coroutineRunning && Chapter1Controller.Instance.DonePlayingFlute)
         {
             //audioManager.PlayOneTimeSound("event:/good_job");
-            StartCoroutine(waitSecondsAndPlay(7, ch1_2_path));
+            StartCoroutine(waitSecondsAndPlay(5, ch1_2_path));
             coroutineRunning = true;
             stage++;
             UnityEngine.Debug.Log("stage is");
@@ -150,7 +150,7 @@ public class MelodyScene1 : MonoBehaviour
         {
             UnityEngine.Debug.Log("entered for fadeBack");
             //fade back to kid's room
-            StartCoroutine(waitSecondsAndFadeBack(12));
+            StartCoroutine(waitSecondsAndFadeBack(10));
         }
     }
     IEnumerator waitSecondsAndHop(int seconds)
@@ -180,7 +180,7 @@ public class MelodyScene1 : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         audioManager.PlayOneTimeSound(path);
-        storyCanvas.ChangeText();
+        //storyCanvas.ChangeText();
         coroutineRunning = false;
     }
     IEnumerator waitSecondsAndFadeBack(int seconds)
