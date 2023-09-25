@@ -23,7 +23,7 @@ public class Teddy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         Ch1AudioManager.Instance.PlayOneTimeSound(ch1_1_path);
-        storyCanvas.ChangeText();
+        //storyCanvas.ChangeText();
     }
 
     // Update is called once per frame
