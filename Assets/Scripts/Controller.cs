@@ -21,7 +21,7 @@ public class Controller : MonoBehaviour
     private Animator bookAnim;
     // time before teddy stands up
     private float time_passed;
-    private int NO_OF_SECONDS = 1;
+    private int NO_OF_SECONDS = 20;
     //debug
     public bool SwitchScene = false;
     public bool teddyStandUp = false;

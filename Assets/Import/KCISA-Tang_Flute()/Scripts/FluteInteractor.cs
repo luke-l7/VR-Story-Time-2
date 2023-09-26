@@ -14,17 +14,17 @@ public class FluteInteractor : MonoBehaviour
     public GameObject SoCube;
     public GameObject LaCube;
     public int SongNumber;
-    
-    
 
-    //string[] song1 = { "do", "do", "so", "so", "la", "la", "so" , "fa", "fa", "mi", "mi", "re", "re", "do" };
-    //string[] song2 = { "mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
-    //string[] song3 = {"re", "re", "mi", "do", "re", "mi", "fa", "re", "do", "re", "mi", "fa", "mi", "re", "do", "re" ,"mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
 
-    //short songs for debug purposes
-    string[] song1 = { "do" };
-    string[] song2 = {"mi" };
-    string[] song3 = { "re"};
+
+    string[] song1 = { "do", "do", "so", "so", "la", "la", "so", "fa", "fa", "mi", "mi", "re", "re", "do" };
+    string[] song2 = { "mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
+    string[] song3 = { "re", "re", "mi", "do", "re", "mi", "fa", "re", "do", "re", "mi", "fa", "mi", "re", "do", "re", "mi", "mi", "fa", "so", "so", "fa", "mi", "re", "do", "do", "re", "mi", "mi", "re", "re" };
+
+    ////short songs for debug purposes
+    //string[] song1 = { "do" };
+    //string[] song2 = {"mi" };
+    //string[] song3 = { "re"};
 
     public int curr_note;
     
