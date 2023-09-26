@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: df94c805b732346418b8be2ba58131ad
+guid: 0399fa64f1d4b0b4da23d747710d4b20
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -22,7 +22,6 @@ PluginImporter:
       enabled: 1
       settings:
         CPU: x86_64
-        DefaultValueInitialized: true
         OS: Windows
   - first:
       Standalone: Win64
