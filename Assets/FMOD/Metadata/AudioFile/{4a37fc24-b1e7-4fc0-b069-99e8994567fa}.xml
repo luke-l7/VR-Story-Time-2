@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4a37fc24-b1e7-4fc0-b069-99e8994567fa}">
+		<property name="assetPath">
+			<value>y2mate (mp3cut.net).mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.536</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{31e9968a-b601-48e0-9b67-36c3dd4f2631}</destination>
+		</relationship>
+	</object>
+</objects>
