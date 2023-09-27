@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.25937915, g: 0.3783424, b: 0.50072426, a: 1}
+  m_IndirectSpecularColor: {r: 0.2524927, g: 0.35330072, b: 0.457569, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -634,6 +634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parrot
       objectReference: {fileID: 0}
+    - target: {fileID: 7629896988078713243, guid: b36fce94519368e448b068fd7447702a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f102c1deb7ff0684d8b9d48d7f66ef71, type: 2}
     - target: {fileID: 7629896988078713245, guid: b36fce94519368e448b068fd7447702a, type: 3}
       propertyPath: m_RootOrder
       value: 8
