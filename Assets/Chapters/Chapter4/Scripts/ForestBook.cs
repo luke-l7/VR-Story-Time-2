@@ -77,13 +77,19 @@ public class ForestBook : MonoBehaviour
         }
         else if(stage==4 && flute.donePlayingFlute == true)
         {
+            ParticleSystem ps = particleEffect.GetComponent<ParticleSystem>();
+            ParticleSystem.MainModule _main = ps.main;
+            _main.loop = true;
+            ps.Play();
+
             bookLight.GetComponent<Animator>().SetBool("Glow", true);
             forestLights.SetActive(true);
             narratorInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Chapter4_4");
-            narratorInstance.start();
+            StartCoroutine(waitSecondsAndPlay(4));
+            coroutineRunning= true;
             stage++;
         }
-        if(stage == 5)
+        if(stage == 5 && ! coroutineRunning)
         {
             FMOD.Studio.PLAYBACK_STATE state;
             narratorInstance.getPlaybackState(out state);
@@ -121,5 +127,11 @@ public class ForestBook : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         Animals.LetAnimalsOut();
+    }
+    IEnumerator waitSecondsAndPlay(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        narratorInstance.start();
+        coroutineRunning = false;
     }
 }
