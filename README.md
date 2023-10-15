@@ -24,7 +24,9 @@ In this Project, which is a continuum of the original '[VR Story Time](https://g
 * **Better Assets** - choosing the assets and the theme of the project is a challenge by itself, we made sure to choose consistent assets that contribute to the overall feeling that we want the user to experience - calmness and safe.
 * **Stability** - Everything that we learned in the first project, we fixed and applied in this one, as well as many more additions and modifications of the code to ensure versatile development and encapsulation in its components.
 
-
+## Resources
+* the amazing [ElevenLabs](https://elevenlabs.io/) for the generative AI narration and character sounds.
+  
 ## The Project
 
 ### Opening Screen
@@ -37,7 +39,17 @@ Since the instrument in the story was a Flute, we built a flute asset in a way t
 
 https://github.com/luke-l7/VR-Story-Time-2/assets/101108230/1966e53d-9ed5-454c-8d60-1c29ae667a24
 
-## Experience
+
+## The Experience
+
+https://github.com/luke-l7/VR-Story-Time-2/assets/101108230/f314f420-21d1-4f69-87e3-c90a618b6043
+
+
+![ezgif-4-177a8b6182](https://github.com/luke-l7/VR-Story-Time-2/assets/101108230/3c993346-225a-44f0-a67a-36dae282d7e9)
+
+
+![clideo_editor_608c136df22b4b78896913bb322a12a5](https://github.com/luke-l7/VR-Story-Time-2/assets/101108230/abe8c011-6a6c-4204-858a-03aa2a2a664a)
+
 
 https://github.com/luke-l7/VR-Story-Time-2/assets/101108230/3db0b27d-b049-4770-8da4-37506e69eee2
 
