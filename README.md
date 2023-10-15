@@ -3,6 +3,10 @@
 
 The goal was to create an interactive story for kids, by taking a classic story, and building the enviroment, narration, and puzzles throughout the story, to engage the user in the story world, and allow him to help and experience the plot in VR.
 
+'Melody and the Flute of Harmoneyville' had a special element - it was a story about music and one's journey in finding music, thus we took the chance to also build the project in a way that will get the kids closer to experiencing and getting them closer to music, by playing music instruments in VR.
+
+The songs that we included were 'Twinkle twinkle little star', and 'Ode to joy - Beethoven'.
+
 ## Goals
 
 It's purpose wasn't only enternainment, throughout time we realized that it could also serve children who are getting treatments, either at the hospital, home, etc.
@@ -22,3 +26,26 @@ In this Project, which is a continuum of the original '[VR Story Time](https://g
 
 
 ## The Project
+
+### Opening Screen
+
+https://github.com/luke-l7/VR-Story-Time-2/assets/101108230/ed43a08d-987c-40de-bc5b-e0b9bf15be31
+
+### Musical Features
+
+Since the instrument in the story was a Flute, we built a flute asset in a way that it plays the actual music scale (Do,Re,Mi,...), and it could play any song just by writing the musical notes into an array inside the code!
+
+https://github.com/luke-l7/VR-Story-Time-2/assets/101108230/1966e53d-9ed5-454c-8d60-1c29ae667a24
+
+## Experience
+
+https://github.com/luke-l7/VR-Story-Time-2/assets/101108230/3db0b27d-b049-4770-8da4-37506e69eee2
+
+
+https://github.com/luke-l7/VR-Story-Time-2/assets/101108230/46e5e62c-d176-424a-bd1d-5df0f2a58212
+
+
+
+
+
+
