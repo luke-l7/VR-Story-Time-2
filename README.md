@@ -14,7 +14,7 @@ We also decided to discard the VR kit's controllers (the one you hold in your ha
 As well as having a relaxing and secure feeling throughout the story, something which we were able to maintain by choosing the right theme of music, and in the visuals by involving animals, teddy bears and characters from the story.
 
 ## Key Components
-In this Project, which is a continuum of the original '[VR Story Time](https://github.com/husen1015/vrStoryTime)' in semester A, contains many more elements and immersive experience, of those are
+In this Project, which is a continuum of the original '[VR Story Time](https://github.com/husen1015/vrStoryTime)' in semester A, contains many more elements and a more immersive experience, the key additions are
 
 * **AI Components** - the Story itself, which we called '**Melody and the Flute of Harmoneyville**' was produced using ChatGPT, along with the narration and sound of characters in the experience, were produced using AI as well.
 * **Better Assets** - choosing the assets and the theme of the project is a challenge by itself, we made sure to choose consistent assets that contribute to the overall feeling that we want the user to experience - calmness and safe.
