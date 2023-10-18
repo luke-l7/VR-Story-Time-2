@@ -3,7 +3,7 @@
 
 The goal was to create an interactive story for kids, by taking a classic story, and building the enviroment, narration, and puzzles throughout the story, to engage the user in the story world, and allow him to help and experience the plot in VR.
 
-'Melody and the Flute of Harmoneyville' had a special element - it was a story about music and one's journey in finding music, thus we took the chance to also build the project in a way that will get the kids experiencing and getting them closer to music, by playing instruments in VR.
+'Melody and the Flute of Harmoneyville' had a special element - it was a story about music and one's journey in finding music, and so we took the chance to also build the project in a way that will bring the kids closer to music, by playing instruments in VR.
 
 The songs that we included were 'Twinkle twinkle little star', and 'Ode to joy - Beethoven'.
 
